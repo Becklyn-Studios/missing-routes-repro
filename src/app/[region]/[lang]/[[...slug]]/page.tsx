@@ -1,3 +1,4 @@
+import { NeoHeadline } from "@/components/shared/NeoHeadline/NeoHeadline";
 import { initializeSegmentLayer } from "@/lib/cache";
 import { getClient } from "@/lib/contentful/client";
 import { LangKey, RegionKey, getI18nFromRegionAndLang } from "@/lib/locale";
@@ -62,7 +63,7 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div>
-      <h1>{title}</h1>
+      <NeoHeadline>{title}</NeoHeadline>
     </div>
   );
 }
