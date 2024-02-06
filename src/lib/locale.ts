@@ -34,8 +34,8 @@ export type LocaleKey =
 
 const i18n = {
   global: REGION_GLOBAL,
-  ch: REGION_CH,
-  de: REGION_DE,
+  //  ch: REGION_CH,
+  //  de: REGION_DE,
 };
 
 export type RegionKey = keyof typeof i18n;
