@@ -3,6 +3,7 @@ import { NeoHeadline } from "../NeoHeadline/NeoHeadline";
 import { Image } from "@/lib/image";
 import { NeoLink } from "../NeoLink/NeoLink";
 import { NeoSocialMediaList } from "../NeoSocialMediaList/NeoSocialMediaList";
+import { cn } from "@/lib/util";
 
 export interface NeoContactProps {
   image?: {
@@ -28,9 +29,16 @@ export const NeoContact: React.FC<NeoContactProps> = ({
   mail,
   linkedin,
   xing,
+  single,
 }) => {
   return (
-    <div className={"neo-contact"}>
+    <div
+      className={cn({
+        "neo-contact": true,
+        contact: true,
+        single: single,
+      })}
+    >
       {image && (
         <Image
           className="contact__image"
