@@ -1,0 +1,76 @@
+import React from "react";
+import { NeoHeadline } from "../NeoHeadline/NeoHeadline";
+import { Image } from "@/lib/image";
+import { NeoLink } from "../NeoLink/NeoLink";
+import { NeoSocialMediaList } from "../NeoSocialMediaList/NeoSocialMediaList";
+
+export interface NeoContactProps {
+  image?: {
+    src: string;
+    alt: string;
+  };
+  headline?: string;
+  subline?: string;
+  phone?: string;
+  fax?: string;
+  mail?: string;
+  linkedin?: string;
+  xing?: string;
+  single?: boolean;
+}
+
+export const NeoContact: React.FC<NeoContactProps> = ({
+  image,
+  headline,
+  subline,
+  phone,
+  fax,
+  mail,
+  linkedin,
+  xing,
+}) => {
+  return (
+    <div className={"neo-contact"}>
+      {image && (
+        <Image
+          className="contact__image"
+          src={image.src}
+          alt={image.alt}
+          height={170}
+          width={170}
+          sizes="170px"
+        />
+      )}
+      <div className="contact__details">
+        {headline && <NeoHeadline level={3}>{headline}</NeoHeadline>}
+        {subline && <p className="contact__jobtitle">{subline}</p>}
+        <ul className="contact__list">
+          {phone && (
+            <li>
+              <NeoLink hideMarker noUppercase href={`tel:${phone}`}>
+                <span>t:</span>
+                {phone}
+              </NeoLink>
+            </li>
+          )}
+          {fax && (
+            <li>
+              <span>f:</span>
+              {fax}
+            </li>
+          )}
+          {mail && (
+            <li>
+              <NeoLink hideMarker noUppercase href={`mailto:${mail}`}>
+                {mail}
+              </NeoLink>
+            </li>
+          )}
+        </ul>
+        {(linkedin || xing) && (
+          <NeoSocialMediaList isRed={true} linkedin={linkedin} xing={xing} />
+        )}
+      </div>
+    </div>
+  );
+};

@@ -1,12 +1,13 @@
 import { getContent } from "@/lib/contentful/api/content";
 import { TextMedia } from "./TextMedia";
+import { ContactCollection } from "./ContactCollection";
 
 const contents = {
   newsCollection: null,
   eventCollection: null,
   blogCollection: null,
   cardCollection: null,
-  contactCollection: null,
+  contactCollection: ContactCollection,
   tileCollection: null,
   linkList: null,
   textImage: TextMedia,
