@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { NeoIcon } from "../NeoIcon/NeoIcon";
 
 export interface NeoSocialMediaListProps {
   facebook?: string;
@@ -28,49 +29,49 @@ export const NeoSocialMediaList: React.FC<NeoSocialMediaListProps> = ({
       {facebook && (
         <li>
           <Link href={`${facebook}${href}`} target="_blank">
-            Facebook
+            <NeoIcon icon={"facebook"} className={"and-another-class"} />
           </Link>
         </li>
       )}
       {twitter && (
         <li>
           <Link href={`${twitter}${href}`} target="_blank">
-            Twitter
+            <NeoIcon icon={"twitter"} />
           </Link>
         </li>
       )}
       {linkedin && (
         <li>
           <Link href={`${linkedin}${href}`} target="_blank">
-            LinkedIn
+            <NeoIcon icon={"linkedin"} />
           </Link>
         </li>
       )}
       {xing && (
         <li>
           <Link href={`${xing}${href}`} target="_blank">
-            Xing
+            <NeoIcon icon={"xing"} />
           </Link>
         </li>
       )}
       {youtube && (
         <li>
           <Link href={youtube} target="_blank">
-            YouTube
+            <NeoIcon icon={"youtube"} width={90} />
           </Link>
         </li>
       )}
       {instagram && (
         <li>
           <Link href={instagram} target="_blank">
-            Instagram
+            <NeoIcon icon={"instagram"} />
           </Link>
         </li>
       )}
       {wechat && (
         <li>
           <Link href={wechat} target="_blank">
-            WeChat
+            <NeoIcon icon={"wechat"} />
           </Link>
         </li>
       )}
