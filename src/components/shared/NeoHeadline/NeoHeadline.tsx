@@ -1,12 +1,6 @@
 import React, { ElementType, HTMLAttributes, PropsWithChildren } from "react";
 
-export type NeoHeadlineLevel = 1 | 2 | 3 | 4;
-
-export interface NeoHeadlineProps {
-  level?: NeoHeadlineLevel;
-}
-
-export const NeoHeadline: React.FC<PropsWithChildren<NeoHeadlineProps>> = ({
+export const NeoHeadline: React.FC<PropsWithChildren<any>> = ({
   level = 1,
   children,
 }) => {

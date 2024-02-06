@@ -1,7 +1,9 @@
+import { ContentCreator } from "@/components/creators/contents";
 import { NeoHeadline } from "@/components/shared/NeoHeadline/NeoHeadline";
 import { initializeSegmentLayer } from "@/lib/cache";
 import { getClient } from "@/lib/contentful/client";
 import { LangKey, RegionKey, getI18nFromRegionAndLang } from "@/lib/locale";
+import { getContentIds } from "@/lib/page";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -61,9 +63,16 @@ export default async function Page({ params }: PageProps) {
 
   const title = pageProps.fields.title as string;
 
+  const contentIds = getContentIds(pageProps);
+
+  const contents = contentIds.map(({ id, contentId }) =>
+    ContentCreator(id, contentId, locale),
+  );
+
   return (
     <div>
-      <NeoHeadline>{title}</NeoHeadline>
+      <h1>{title}</h1>
+      {contents}
     </div>
   );
 }
