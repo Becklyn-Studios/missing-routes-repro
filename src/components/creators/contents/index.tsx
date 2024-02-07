@@ -6,22 +6,32 @@ import { getCurrentLocale } from "@lib/layers/state/server";
 import { draftMode } from "next/headers";
 import { CardCollection } from "./CardCollection";
 import { Teaser } from "./Teaser";
+import { Accordion } from "./Accordion";
+import { BlogCollection } from "./BlogCollection";
+import { EventCollection } from "./EventCollection";
+import { NewsCollection } from "./NewsCollection";
+import { TileCollection } from "./TileCollection";
+import { LinkList } from "./LinkList";
+import { Quote } from "./Quote";
+import { Image } from "./Image";
+import { QuoteSlider } from "./QuoteSlider";
+import { Video } from "./Video";
 
 const contents = {
-  newsCollection: null,
-  eventCollection: null,
-  blogCollection: null,
+  newsCollection: NewsCollection,
+  eventCollection: EventCollection,
+  blogCollection: BlogCollection,
   cardCollection: CardCollection,
   contactCollection: ContactCollection,
-  tileCollection: null,
-  linkList: null,
+  tileCollection: TileCollection,
+  linkList: LinkList,
   textImage: TextMedia,
-  accordion: null,
+  accordion: Accordion,
   teaser: Teaser,
-  quote: null,
-  image: null,
-  quoteSlider: null,
-  video: null,
+  quote: Quote,
+  image: Image,
+  quoteSlider: QuoteSlider,
+  video: Video,
   iframe: null,
   energyCampaignForm: null,
   logoSlider: null,
