@@ -35,7 +35,32 @@ export default async function Layout({
 
   return (
     <html lang={lang} className={fonts}>
-      <head></head>
+      <head>
+        <Script id="cookie-script" src={"/cookie-banner/index.js"} />
+        <Script
+          className="cmplazyload"
+          data-cmp-vendor="s29"
+          data-cmp-src={"https://cdn.livechatinc.com/tracking.js"}
+        />
+        <Script
+          className="cmplazyload"
+          data-cmp-vendor="s905"
+          data-cmp-src="https://www.googletagmanager.com/gtm.js?id=GTM-KSZ43T3"
+        />
+        <Script id="gtm-script">
+          {`
+                        // GTM
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag() { window.dataLayer.push(arguments); }
+                        gtag('js', new Date());
+                        gtag('config', 'GTM-KSZ43T3');
+                        
+                        // LiveChat
+                        window.__lc = window.__lc || {};
+                        window.__lc.license = 4401291;
+                    `}
+        </Script>
+      </head>
       <body className="font-sans antialiased">
         {children}
         {isEnabled && <Script src="/live-preview.mjs" />}
