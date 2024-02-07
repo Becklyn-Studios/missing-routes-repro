@@ -1,5 +1,16 @@
-import { getAvailableI18nPairs } from "@lib/i18n/locales";
-import { PropsWithChildren } from "react";
+import Script from "next/script";
+import React, { PropsWithChildren } from "react";
+import { fonts } from "@css/typography";
+import { LangKey, RegionKey, getAvailableI18nPairs } from "@lib/i18n/locales";
+import { draftMode } from "next/headers";
+import { initializeLayers } from "@lib/layers";
+
+interface LayoutProps {
+  params: {
+    region: RegionKey;
+    lang: LangKey;
+  };
+}
 
 export const dynamicParams = false;
 
@@ -13,21 +24,21 @@ export function generateStaticParams() {
   return pairs;
 }
 
-interface LayoutProps {
-  params: {
-    region: string;
-    lang: string;
-  };
-}
-
 export default async function Layout({
   params,
   children,
 }: PropsWithChildren<LayoutProps>) {
-  const { lang } = params;
+  const { isEnabled } = draftMode();
+  const props = await initializeLayers(params);
+  const lang = props.state.currentLang;
+
   return (
-    <html lang={lang}>
-      <body>{children}</body>
+    <html lang={lang} className={fonts}>
+      <head></head>
+      <body className="font-sans antialiased">
+        {children}
+        {isEnabled && <Script src="/live-preview.mjs" />}
+      </body>
     </html>
   );
 }
