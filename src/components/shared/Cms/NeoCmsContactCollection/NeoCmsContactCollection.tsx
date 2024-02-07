@@ -1,11 +1,14 @@
 import React, { PropsWithChildren } from "react";
-import { NeoHeadline } from "../../NeoHeadline/NeoHeadline";
-import { cn } from "@/lib/util";
+import { cn } from "@lib/util";
+import {
+  NeoHeadline,
+  NeoHeadlineLevel,
+} from "@components/shared/NeoHeadline/NeoHeadline";
 
 export interface NeoCmsContactCollectionProps {
   background?: boolean;
   headline?: string;
-  headlineLevel?: number;
+  headlineLevel?: NeoHeadlineLevel;
   single: boolean;
 }
 

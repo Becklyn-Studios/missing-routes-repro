@@ -1,13 +1,6 @@
-import { Segment } from "@/type/segment";
-import { LocaleKey } from "./locale";
-import { getSegmentsForLocale } from "./segments";
-
-export interface SegmentLayer {
-  segments: Segment[];
-  byId: Record<string, Segment>;
-  bySlug: Record<string, Segment>;
-  usedLocale: LocaleKey;
-}
+import { Segment, getSegmentsForLocale } from "@lib/contentful/segments";
+import { LocaleKey } from "@lib/i18n/locales";
+import { SegmentLayer } from "./types";
 
 const cache = new Map<"segment", SegmentLayer>();
 

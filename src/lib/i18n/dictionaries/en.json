@@ -1,0 +1,58 @@
+{
+  "components": {
+    "NeoMarketFinder": {
+      "NeoDropdown": {
+        "label": "Change market"
+      }
+    },
+    "NeoMultiSelect": {
+      "noResultsFound": "No Results found",
+      "noChoices": "No Choices to choose from"
+    },
+    "NeoDragAndDrop": {
+      "labelMobile": {
+        "text1": "Browse",
+        "text2": "to upload your files"
+      },
+      "labelDesktop": {
+        "text1": "Drag your files here or",
+        "text2": "browse"
+      }
+    },
+    "NeoProductLineResultItem": {
+      "alt": "Product Line Image"
+    },
+    "NeoCmsLogin": {
+      "logoutLabel": "Logout",
+      "error": "Login was unsuccessful"
+    },
+    "NeoCmsProductPageIntro": {
+      "areaOfApplication": "Areas of application"
+    }
+  },
+  "products": {
+    "groups": {
+      "aerator": "Aerator",
+      "flowRegulator": "Flow Regulator",
+      "checkValve": "Check Valve",
+      "hoses": "Hoses",
+      "diverter": "Diverter",
+      "pressureRegulator": "Pressure Regulator",
+      "byPassCartridge": "Bypass Cartridge",
+      "onOffValve": "On/Off Valve",
+      "mountingTools": "Mounting Tools",
+      "strainer": "Strainer",
+      "accessories": "Accessories"
+    }
+  },
+  "i18n": {
+    "regions": {
+      "global": "Global",
+      "ch": "Switzerland",
+      "de": "Germany"
+    }
+  },
+  "global": {
+    "errorTryAgain": "An error occurred, please try again"
+  }
+}

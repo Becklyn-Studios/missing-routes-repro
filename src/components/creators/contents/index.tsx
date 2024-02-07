@@ -1,6 +1,9 @@
-import { getContent } from "@/lib/contentful/api/content";
 import { TextMedia } from "./TextMedia";
 import { ContactCollection } from "./ContactCollection";
+import { getContent } from "@lib/contentful/api/content";
+import { SearchParams } from "@type/common";
+import { getCurrentLocale } from "@lib/layers/state/server";
+import { draftMode } from "next/headers";
 
 const contents = {
   newsCollection: null,
@@ -24,27 +27,34 @@ const contents = {
   productFinderFeedingElement: null,
 };
 
+export type ContentKey = keyof typeof contents;
+
 export const ContentCreator = async (
   id: string,
-  contentId: string,
-  locale: string,
+  contentKey: ContentKey,
+  searchParams: SearchParams,
 ) => {
-  if (!contentId) {
+  if (!contentKey) {
     return null;
   }
 
-  /* @ts-ignore */
-  const Component = contents[contentId];
+  const Component = contents[contentKey];
 
   if (!Component) {
     return null;
   }
 
-  const data = await getContent(id, locale);
+  const locale = getCurrentLocale();
+  const { isEnabled } = draftMode();
+  const data = (await getContent(
+    id,
+    { include: 3, locale },
+    { isDraftMode: isEnabled },
+  )) as any;
 
   if (!data) {
     return null;
   }
 
-  return <Component {...data} />;
+  return <Component {...data} searchParams={searchParams} />;
 };

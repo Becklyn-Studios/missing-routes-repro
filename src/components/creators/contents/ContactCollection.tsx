@@ -1,6 +1,6 @@
-import { NeoCmsContactCollection } from "@/components/shared/Cms/NeoCmsContactCollection/NeoCmsContactCollection";
-import { NeoContact } from "@/components/shared/NeoContact/NeoContact";
-import { normalizeHeadlineLevel, normalizeImage } from "@/lib/contentful/util";
+import { NeoCmsContactCollection } from "@components/shared/Cms/NeoCmsContactCollection/NeoCmsContactCollection";
+import { NeoContact } from "@components/shared/NeoContact/NeoContact";
+import { normalizeHeadlineLevel, normalizeImage } from "@lib/contentful/util";
 import React from "react";
 
 export const ContactCollection: React.FC<any> = ({

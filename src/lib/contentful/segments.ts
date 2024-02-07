@@ -1,6 +1,5 @@
-import { Segment } from "@/type/segment";
-import { getClient } from "./contentful/client";
-import { LocaleKey, getI18nFromLocale } from "./locale";
+import { getClient } from "./client";
+import { LocaleKey, getI18nFromLocale } from "@lib/i18n/locales";
 
 export type SegmentType =
   | "CONTENT"
@@ -37,6 +36,40 @@ const getSegmentTypeByContentType = (
       return "JOB";
   }
 };
+
+export interface SegmentDefaultProperties {
+  isRoot?: boolean;
+}
+
+export interface SegmentContentProperties {
+  isHiddenFromNav?: boolean;
+  isHiddenFromSearch?: boolean;
+}
+
+export interface SegmentProductProperties {
+  opaccIds?: string[];
+}
+
+export type SegmentProperties = SegmentDefaultProperties &
+  (SegmentContentProperties | SegmentProductProperties);
+
+export interface SegmentBase<Type extends SegmentType, Properties = {}> {
+  id: string;
+  title: string;
+  slug: string[];
+  children: string[];
+  type: Type;
+  properties: SegmentDefaultProperties & Properties;
+}
+
+export type SegmentDefault = SegmentBase<
+  Exclude<SegmentType, "PRODUCT" | "CONTENT">,
+  {}
+>;
+export type SegmentContent = SegmentBase<"CONTENT", SegmentContentProperties>;
+export type SegmentProduct = SegmentBase<"PRODUCT", SegmentProductProperties>;
+
+export type Segment = SegmentDefault | SegmentContent | SegmentProduct;
 
 export const getSegmentsForLocale = async (locale: LocaleKey) => {
   const client = getClient();

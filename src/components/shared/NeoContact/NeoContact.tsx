@@ -1,9 +1,9 @@
 import React from "react";
 import { NeoHeadline } from "../NeoHeadline/NeoHeadline";
-import { Image } from "@/lib/image";
 import { NeoLink } from "../NeoLink/NeoLink";
 import { NeoSocialMediaList } from "../NeoSocialMediaList/NeoSocialMediaList";
-import { cn } from "@/lib/util";
+import { cn } from "@lib/util";
+import { Image } from "@lib/image";
 
 export interface NeoContactProps {
   image?: {

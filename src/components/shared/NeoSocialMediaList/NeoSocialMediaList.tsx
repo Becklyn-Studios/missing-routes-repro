@@ -1,6 +1,7 @@
+import { NeoIcon } from "@components/shared/NeoIcon/NeoIcon";
 import React from "react";
+import { cn } from "@lib/util";
 import Link from "next/link";
-import { NeoIcon } from "../NeoIcon/NeoIcon";
 
 export interface NeoSocialMediaListProps {
   facebook?: string;
@@ -21,11 +22,22 @@ export const NeoSocialMediaList: React.FC<NeoSocialMediaListProps> = ({
   youtube,
   instagram,
   wechat,
+  isRed = false,
 }) => {
+  //  TODO: Create getter for current URL
   let href = "";
 
   return (
-    <ul className="neo-socialmedia-list NeoSocialMediaList socialMediaList">
+    <ul
+      className={cn(
+        "neo-socialmedia-list",
+        "NeoSocialMediaList",
+        "socialMediaList",
+        {
+          "socialMediaList--red": isRed,
+        },
+      )}
+    >
       {facebook && (
         <li>
           <Link href={`${facebook}${href}`} target="_blank">

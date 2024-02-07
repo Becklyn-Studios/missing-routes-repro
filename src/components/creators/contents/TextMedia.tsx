@@ -1,6 +1,6 @@
-import { NeoCmsTextMedia } from "@/components/shared/Cms/NeoCmsTextMedia/NeoCmsTextMedia";
-import { NeoHeadline } from "@/components/shared/NeoHeadline/NeoHeadline";
-import { normalizeHeadlineLevel } from "@/lib/contentful/util";
+import { NeoCmsTextMedia } from "@components/shared/Cms/NeoCmsTextMedia/NeoCmsTextMedia";
+import { NeoHeadline } from "@components/shared/NeoHeadline/NeoHeadline";
+import { normalizeHeadlineLevel } from "@lib/contentful/util";
 import React from "react";
 
 export const TextMedia: React.FC<any> = ({

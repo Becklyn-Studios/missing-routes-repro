@@ -1,265 +1,331 @@
 import dynamic from "next/dynamic";
 
 const icons = {
-  Adapter: dynamic(() => import("./Adapter").then(({ Adapter }) => Adapter)),
-  Aerator: dynamic(() => import("./Aerator").then(({ Aerator }) => Aerator)),
-  BallJoint: dynamic(() =>
-    import("./BallJoint").then(({ BallJoint }) => BallJoint),
-  ),
-  Bathtubfitting: dynamic(() =>
-    import("./Bathtubfitting").then(({ Bathtubfitting }) => Bathtubfitting),
-  ),
-  Bidet: dynamic(() => import("./Bidet").then(({ Bidet }) => Bidet)),
-  BypassValve: dynamic(() =>
-    import("./BypassValve").then(({ BypassValve }) => BypassValve),
-  ),
-  CheckValve: dynamic(() =>
-    import("./CheckValve").then(({ CheckValve }) => CheckValve),
-  ),
-  Diverter: dynamic(() =>
-    import("./Diverter").then(({ Diverter }) => Diverter),
-  ),
-  Electronicfaucet: dynamic(() =>
-    import("./Electronicfaucet").then(
-      ({ Electronicfaucet }) => Electronicfaucet,
+    Adapter: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Adapter").then(({ Adapter }) => Adapter)
     ),
-  ),
-  FlowRegulator: dynamic(() =>
-    import("./FlowRegulator").then(({ FlowRegulator }) => FlowRegulator),
-  ),
-  Heater: dynamic(() => import("./Heater").then(({ Heater }) => Heater)),
-  Hose: dynamic(() => import("./Hose").then(({ Hose }) => Hose)),
-  Hotwaterapplications: dynamic(() =>
-    import("./Hotwaterapplications").then(
-      ({ Hotwaterapplications }) => Hotwaterapplications,
+    Aerator: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Aerator").then(({ Aerator }) => Aerator)
     ),
-  ),
-  Keys: dynamic(() => import("./Keys").then(({ Keys }) => Keys)),
-  Kitchenfitting: dynamic(() =>
-    import("./Kitchenfitting").then(({ Kitchenfitting }) => Kitchenfitting),
-  ),
-  Logo: dynamic(() => import("./Logo").then(({ Logo }) => Logo)),
-  Maintenanceservice: dynamic(() =>
-    import("./Maintenanceservice").then(
-      ({ Maintenanceservice }) => Maintenanceservice,
+    BallJoint: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BallJoint").then(({ BallJoint }) => BallJoint)
     ),
-  ),
-  PressureRegulator: dynamic(() =>
-    import("./PressureRegulator").then(
-      ({ PressureRegulator }) => PressureRegulator,
+    Bathtubfitting: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Bathtubfitting").then(
+            ({ Bathtubfitting }) => Bathtubfitting
+        )
     ),
-  ),
-  Pump: dynamic(() => import("./Pump").then(({ Pump }) => Pump)),
-  Rainshower: dynamic(() =>
-    import("./Rainshower").then(({ Rainshower }) => Rainshower),
-  ),
-  Sanitaryapplications: dynamic(() =>
-    import("./Sanitaryapplications").then(
-      ({ Sanitaryapplications }) => Sanitaryapplications,
+    Bidet: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Bidet").then(({ Bidet }) => Bidet)
     ),
-  ),
-  ServiceKey: dynamic(() =>
-    import("./ServiceKey").then(({ ServiceKey }) => ServiceKey),
-  ),
-  Showerfitting: dynamic(() =>
-    import("./Showerfitting").then(({ Showerfitting }) => Showerfitting),
-  ),
-  Showertoilet: dynamic(() =>
-    import("./Showertoilet").then(({ Showertoilet }) => Showertoilet),
-  ),
-  Sidespray: dynamic(() =>
-    import("./Sidespray").then(({ Sidespray }) => Sidespray),
-  ),
-  Solartherme: dynamic(() =>
-    import("./Solartherme").then(({ Solartherme }) => Solartherme),
-  ),
-  StopValve: dynamic(() =>
-    import("./StopValve").then(({ StopValve }) => StopValve),
-  ),
-  Strainer: dynamic(() =>
-    import("./Strainer").then(({ Strainer }) => Strainer),
-  ),
-  Technicalapplications: dynamic(() =>
-    import("./Technicalapplications").then(
-      ({ Technicalapplications }) => Technicalapplications,
+    BypassValve: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BypassValve").then(({ BypassValve }) => BypassValve)
     ),
-  ),
-  Thermostaticfaucet: dynamic(() =>
-    import("./Thermostaticfaucet").then(
-      ({ Thermostaticfaucet }) => Thermostaticfaucet,
+    CheckValve: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/CheckValve").then(({ CheckValve }) => CheckValve)
     ),
-  ),
-  Toilet: dynamic(() => import("./Toilet").then(({ Toilet }) => Toilet)),
-  Washbasinfitting: dynamic(() =>
-    import("./Washbasinfitting").then(
-      ({ Washbasinfitting }) => Washbasinfitting,
+    Diverter: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Diverter").then(({ Diverter }) => Diverter)
     ),
-  ),
-  Waterconditioner: dynamic(() =>
-    import("./Waterconditioner").then(
-      ({ Waterconditioner }) => Waterconditioner,
+    Electronicfaucet: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Electronicfaucet").then(
+            ({ Electronicfaucet }) => Electronicfaucet
+        )
     ),
-  ),
-  Watercounter: dynamic(() =>
-    import("./Watercounter").then(({ Watercounter }) => Watercounter),
-  ),
-  Watersavingapplication: dynamic(() =>
-    import("./Watersavingapplication").then(
-      ({ Watersavingapplication }) => Watersavingapplication,
+    FlowRegulator: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/FlowRegulator").then(
+            ({ FlowRegulator }) => FlowRegulator
+        )
     ),
-  ),
-  arrowThinLeft: dynamic(() =>
-    import("./ArrowThinLeft").then(({ ArrowThinLeft }) => ArrowThinLeft),
-  ),
-  arrowThinUp: dynamic(() =>
-    import("./ArrowThinUp").then(({ ArrowThinUp }) => ArrowThinUp),
-  ),
-  banderole: dynamic(() =>
-    import("./Banderole").then(({ Banderole }) => Banderole),
-  ),
-  boxEuro_1: dynamic(() =>
-    import("./BoxEuro1").then(({ BoxEuro1 }) => BoxEuro1),
-  ),
-  boxNoEuro_1: dynamic(() =>
-    import("./BoxNoEuro1").then(({ BoxNoEuro1 }) => BoxNoEuro1),
-  ),
-  bulk: dynamic(() => import("./Bulk").then(({ Bulk }) => Bulk)),
-  bundledBrochure_10: dynamic(() =>
-    import("./BundledBrochure10").then(
-      ({ BundledBrochure10 }) => BundledBrochure10,
+    Heater: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Heater").then(({ Heater }) => Heater)
     ),
-  ),
-  bundledBrochure_20: dynamic(() =>
-    import("./BundledBrochure20").then(
-      ({ BundledBrochure20 }) => BundledBrochure20,
+    Hose: dynamic(() => import("@components/shared/NeoIcon/icon/Hose").then(({ Hose }) => Hose)),
+    Hotwaterapplications: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Hotwaterapplications").then(
+            ({ Hotwaterapplications }) => Hotwaterapplications
+        )
     ),
-  ),
-  bundledBrochure_25: dynamic(() =>
-    import("./BundledBrochure25").then(
-      ({ BundledBrochure25 }) => BundledBrochure25,
+    Keys: dynamic(() => import("@components/shared/NeoIcon/icon/Keys").then(({ Keys }) => Keys)),
+    Kitchenfitting: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Kitchenfitting").then(
+            ({ Kitchenfitting }) => Kitchenfitting
+        )
     ),
-  ),
-  bundledTubes_1: dynamic(() =>
-    import("./BundledTubes1").then(({ BundledTubes1 }) => BundledTubes1),
-  ),
-  bundledTubes_10: dynamic(() =>
-    import("./BundledTubes10").then(({ BundledTubes10 }) => BundledTubes10),
-  ),
-  bundledTubes_5: dynamic(() =>
-    import("./BundledTubes5").then(({ BundledTubes5 }) => BundledTubes5),
-  ),
-  calendar: dynamic(() =>
-    import("./Calendar").then(({ Calendar }) => Calendar),
-  ),
-  carrierCardEuro_1: dynamic(() =>
-    import("./CarrierCardEuro1").then(
-      ({ CarrierCardEuro1 }) => CarrierCardEuro1,
+    Logo: dynamic(() => import("@components/shared/NeoIcon/icon/Logo").then(({ Logo }) => Logo)),
+    Maintenanceservice: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Maintenanceservice").then(
+            ({ Maintenanceservice }) => Maintenanceservice
+        )
     ),
-  ),
-  carrierCardEuro_2: dynamic(() =>
-    import("./CarrierCardEuro2").then(
-      ({ CarrierCardEuro2 }) => CarrierCardEuro2,
+    PressureRegulator: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/PressureRegulator").then(
+            ({ PressureRegulator }) => PressureRegulator
+        )
     ),
-  ),
-  chevronDown: dynamic(() =>
-    import("./ChevronDown").then(({ ChevronDown }) => ChevronDown),
-  ),
-  chevronRight: dynamic(() =>
-    import("./ChevronRight").then(({ ChevronRight }) => ChevronRight),
-  ),
-  cross: dynamic(() => import("./Cross").then(({ Cross }) => Cross)),
-  download: dynamic(() =>
-    import("./Download").then(({ Download }) => Download),
-  ),
-  facebook: dynamic(() =>
-    import("./Facebook").then(({ Facebook }) => Facebook),
-  ),
-  featureAutoClean: dynamic(() =>
-    import("./FeatureAutoClean").then(
-      ({ FeatureAutoClean }) => FeatureAutoClean,
+    Pump: dynamic(() => import("@components/shared/NeoIcon/icon/Pump").then(({ Pump }) => Pump)),
+    Rainshower: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Rainshower").then(({ Rainshower }) => Rainshower)
     ),
-  ),
-  featureSlc: dynamic(() =>
-    import("./FeatureSlc").then(({ FeatureSlc }) => FeatureSlc),
-  ),
-  featureSsr: dynamic(() =>
-    import("./FeatureSsr").then(({ FeatureSsr }) => FeatureSsr),
-  ),
-  file: dynamic(() => import("./File").then(({ File }) => File)),
-  information: dynamic(() =>
-    import("./Information").then(({ Information }) => Information),
-  ),
-  instagram: dynamic(() =>
-    import("./Instagram").then(({ Instagram }) => Instagram),
-  ),
-  linkedin: dynamic(() =>
-    import("./Linkedin").then(({ Linkedin }) => Linkedin),
-  ),
-  lock: dynamic(() => import("./Lock").then(({ Lock }) => Lock)),
-  menu: dynamic(() => import("./Menu").then(({ Menu }) => Menu)),
-  minus: dynamic(() => import("./Minus").then(({ Minus }) => Minus)),
-  plus: dynamic(() => import("./Plus").then(({ Plus }) => Plus)),
-  productfinder: dynamic(() =>
-    import("./Productfinder").then(({ Productfinder }) => Productfinder),
-  ),
-  quote: dynamic(() => import("./Quote").then(({ Quote }) => Quote)),
-  search: dynamic(() => import("./Search").then(({ Search }) => Search)),
-  singleblister_1: dynamic(() =>
-    import("./Singleblister1").then(({ Singleblister1 }) => Singleblister1),
-  ),
-  singleblister_2: dynamic(() =>
-    import("./Singleblister2").then(({ Singleblister2 }) => Singleblister2),
-  ),
-  singleblister_4: dynamic(() =>
-    import("./Singleblister4").then(({ Singleblister4 }) => Singleblister4),
-  ),
-  singleblister_6: dynamic(() =>
-    import("./Singleblister6").then(({ Singleblister6 }) => Singleblister6),
-  ),
-  slideBoxInBlister_10: dynamic(() =>
-    import("./SlideBoxInBlister10").then(
-      ({ SlideBoxInBlister10 }) => SlideBoxInBlister10,
+    Sanitaryapplications: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Sanitaryapplications").then(
+            ({ Sanitaryapplications }) => Sanitaryapplications
+        )
     ),
-  ),
-  slideBoxInBlister_5: dynamic(() =>
-    import("./SlideBoxInBlister5").then(
-      ({ SlideBoxInBlister5 }) => SlideBoxInBlister5,
+    ServiceKey: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ServiceKey").then(({ ServiceKey }) => ServiceKey)
     ),
-  ),
-  slideBox_10: dynamic(() =>
-    import("./SlideBox10").then(({ SlideBox10 }) => SlideBox10),
-  ),
-  slideBox_5: dynamic(() =>
-    import("./SlideBox5").then(({ SlideBox5 }) => SlideBox5),
-  ),
-  smallPouchEuro_1: dynamic(() =>
-    import("./SmallPouchEuro1").then(({ SmallPouchEuro1 }) => SmallPouchEuro1),
-  ),
-  smallPouchEuro_2: dynamic(() =>
-    import("./SmallPouchEuro2").then(({ SmallPouchEuro2 }) => SmallPouchEuro2),
-  ),
-  smallPouchEuro_5: dynamic(() =>
-    import("./SmallPouchEuro5").then(({ SmallPouchEuro5 }) => SmallPouchEuro5),
-  ),
-  smallPouchNoEuro_1: dynamic(() =>
-    import("./SmallPouchNoEuro1").then(
-      ({ SmallPouchNoEuro1 }) => SmallPouchNoEuro1,
+    Showerfitting: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Showerfitting").then(
+            ({ Showerfitting }) => Showerfitting
+        )
     ),
-  ),
-  stopwatch: dynamic(() =>
-    import("./Stopwatch").then(({ Stopwatch }) => Stopwatch),
-  ),
-  twitter: dynamic(() => import("./Twitter").then(({ Twitter }) => Twitter)),
-  upload: dynamic(() => import("./Upload").then(({ Upload }) => Upload)),
-  user: dynamic(() => import("./User").then(({ User }) => User)),
-  viewThumb: dynamic(() =>
-    import("./ViewThumb").then(({ ViewThumb }) => ViewThumb),
-  ),
-  warning: dynamic(() => import("./Warning").then(({ Warning }) => Warning)),
-  web: dynamic(() => import("./Web").then(({ Web }) => Web)),
-  wechat: dynamic(() => import("./Wechat").then(({ Wechat }) => Wechat)),
-  xing: dynamic(() => import("./Xing").then(({ Xing }) => Xing)),
-  youtube: dynamic(() => import("./Youtube").then(({ Youtube }) => Youtube)),
+    Showertoilet: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Showertoilet").then(
+            ({ Showertoilet }) => Showertoilet
+        )
+    ),
+    Sidespray: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Sidespray").then(({ Sidespray }) => Sidespray)
+    ),
+    Solartherme: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Solartherme").then(({ Solartherme }) => Solartherme)
+    ),
+    StopValve: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/StopValve").then(({ StopValve }) => StopValve)
+    ),
+    Strainer: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Strainer").then(({ Strainer }) => Strainer)
+    ),
+    Technicalapplications: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Technicalapplications").then(
+            ({ Technicalapplications }) => Technicalapplications
+        )
+    ),
+    Thermostaticfaucet: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Thermostaticfaucet").then(
+            ({ Thermostaticfaucet }) => Thermostaticfaucet
+        )
+    ),
+    Toilet: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Toilet").then(({ Toilet }) => Toilet)
+    ),
+    Washbasinfitting: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Washbasinfitting").then(
+            ({ Washbasinfitting }) => Washbasinfitting
+        )
+    ),
+    Waterconditioner: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Waterconditioner").then(
+            ({ Waterconditioner }) => Waterconditioner
+        )
+    ),
+    Watercounter: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Watercounter").then(
+            ({ Watercounter }) => Watercounter
+        )
+    ),
+    Watersavingapplication: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Watersavingapplication").then(
+            ({ Watersavingapplication }) => Watersavingapplication
+        )
+    ),
+    arrowThinLeft: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ArrowThinLeft").then(
+            ({ ArrowThinLeft }) => ArrowThinLeft
+        )
+    ),
+    arrowThinUp: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ArrowThinUp").then(({ ArrowThinUp }) => ArrowThinUp)
+    ),
+    banderole: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Banderole").then(({ Banderole }) => Banderole)
+    ),
+    boxEuro_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BoxEuro1").then(({ BoxEuro1 }) => BoxEuro1)
+    ),
+    boxNoEuro_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BoxNoEuro1").then(({ BoxNoEuro1 }) => BoxNoEuro1)
+    ),
+    bulk: dynamic(() => import("@components/shared/NeoIcon/icon/Bulk").then(({ Bulk }) => Bulk)),
+    bundledBrochure_10: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledBrochure10").then(
+            ({ BundledBrochure10 }) => BundledBrochure10
+        )
+    ),
+    bundledBrochure_20: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledBrochure20").then(
+            ({ BundledBrochure20 }) => BundledBrochure20
+        )
+    ),
+    bundledBrochure_25: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledBrochure25").then(
+            ({ BundledBrochure25 }) => BundledBrochure25
+        )
+    ),
+    bundledTubes_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledTubes1").then(
+            ({ BundledTubes1 }) => BundledTubes1
+        )
+    ),
+    bundledTubes_10: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledTubes10").then(
+            ({ BundledTubes10 }) => BundledTubes10
+        )
+    ),
+    bundledTubes_5: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/BundledTubes5").then(
+            ({ BundledTubes5 }) => BundledTubes5
+        )
+    ),
+    calendar: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Calendar").then(({ Calendar }) => Calendar)
+    ),
+    carrierCardEuro_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/CarrierCardEuro1").then(
+            ({ CarrierCardEuro1 }) => CarrierCardEuro1
+        )
+    ),
+    carrierCardEuro_2: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/CarrierCardEuro2").then(
+            ({ CarrierCardEuro2 }) => CarrierCardEuro2
+        )
+    ),
+    chevronDown: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ChevronDown").then(({ ChevronDown }) => ChevronDown)
+    ),
+    chevronRight: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ChevronRight").then(
+            ({ ChevronRight }) => ChevronRight
+        )
+    ),
+    cross: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Cross").then(({ Cross }) => Cross)
+    ),
+    download: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Download").then(({ Download }) => Download)
+    ),
+    facebook: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Facebook").then(({ Facebook }) => Facebook)
+    ),
+    featureAutoClean: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/FeatureAutoClean").then(
+            ({ FeatureAutoClean }) => FeatureAutoClean
+        )
+    ),
+    featureSlc: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/FeatureSlc").then(({ FeatureSlc }) => FeatureSlc)
+    ),
+    featureSsr: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/FeatureSsr").then(({ FeatureSsr }) => FeatureSsr)
+    ),
+    file: dynamic(() => import("@components/shared/NeoIcon/icon/File").then(({ File }) => File)),
+    information: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Information").then(({ Information }) => Information)
+    ),
+    instagram: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Instagram").then(({ Instagram }) => Instagram)
+    ),
+    linkedin: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Linkedin").then(({ Linkedin }) => Linkedin)
+    ),
+    lock: dynamic(() => import("@components/shared/NeoIcon/icon/Lock").then(({ Lock }) => Lock)),
+    menu: dynamic(() => import("@components/shared/NeoIcon/icon/Menu").then(({ Menu }) => Menu)),
+    minus: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Minus").then(({ Minus }) => Minus)
+    ),
+    plus: dynamic(() => import("@components/shared/NeoIcon/icon/Plus").then(({ Plus }) => Plus)),
+    productfinder: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Productfinder").then(
+            ({ Productfinder }) => Productfinder
+        )
+    ),
+    quote: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Quote").then(({ Quote }) => Quote)
+    ),
+    search: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Search").then(({ Search }) => Search)
+    ),
+    singleblister_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Singleblister1").then(
+            ({ Singleblister1 }) => Singleblister1
+        )
+    ),
+    singleblister_2: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Singleblister2").then(
+            ({ Singleblister2 }) => Singleblister2
+        )
+    ),
+    singleblister_4: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Singleblister4").then(
+            ({ Singleblister4 }) => Singleblister4
+        )
+    ),
+    singleblister_6: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Singleblister6").then(
+            ({ Singleblister6 }) => Singleblister6
+        )
+    ),
+    slideBoxInBlister_10: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SlideBoxInBlister10").then(
+            ({ SlideBoxInBlister10 }) => SlideBoxInBlister10
+        )
+    ),
+    slideBoxInBlister_5: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SlideBoxInBlister5").then(
+            ({ SlideBoxInBlister5 }) => SlideBoxInBlister5
+        )
+    ),
+    slideBox_10: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SlideBox10").then(({ SlideBox10 }) => SlideBox10)
+    ),
+    slideBox_5: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SlideBox5").then(({ SlideBox5 }) => SlideBox5)
+    ),
+    smallPouchEuro_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SmallPouchEuro1").then(
+            ({ SmallPouchEuro1 }) => SmallPouchEuro1
+        )
+    ),
+    smallPouchEuro_2: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SmallPouchEuro2").then(
+            ({ SmallPouchEuro2 }) => SmallPouchEuro2
+        )
+    ),
+    smallPouchEuro_5: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SmallPouchEuro5").then(
+            ({ SmallPouchEuro5 }) => SmallPouchEuro5
+        )
+    ),
+    smallPouchNoEuro_1: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/SmallPouchNoEuro1").then(
+            ({ SmallPouchNoEuro1 }) => SmallPouchNoEuro1
+        )
+    ),
+    stopwatch: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Stopwatch").then(({ Stopwatch }) => Stopwatch)
+    ),
+    twitter: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Twitter").then(({ Twitter }) => Twitter)
+    ),
+    upload: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Upload").then(({ Upload }) => Upload)
+    ),
+    user: dynamic(() => import("@components/shared/NeoIcon/icon/User").then(({ User }) => User)),
+    viewThumb: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/ViewThumb").then(({ ViewThumb }) => ViewThumb)
+    ),
+    warning: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Warning").then(({ Warning }) => Warning)
+    ),
+    web: dynamic(() => import("@components/shared/NeoIcon/icon/Web").then(({ Web }) => Web)),
+    wechat: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Wechat").then(({ Wechat }) => Wechat)
+    ),
+    xing: dynamic(() => import("@components/shared/NeoIcon/icon/Xing").then(({ Xing }) => Xing)),
+    youtube: dynamic(() =>
+        import("@components/shared/NeoIcon/icon/Youtube").then(({ Youtube }) => Youtube)
+    ),
 };
 
 export type IconKey = keyof typeof icons;

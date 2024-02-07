@@ -1,4 +1,4 @@
-import { getAvailableI18nPairs } from "@/lib/locale";
+import { getAvailableI18nPairs } from "@lib/i18n/locales";
 import { PropsWithChildren } from "react";
 
 export const dynamicParams = false;

@@ -1,9 +1,14 @@
-import { ContentCreator } from "@/components/creators/contents";
-import { NeoHeadline } from "@/components/shared/NeoHeadline/NeoHeadline";
-import { initializeSegmentLayer } from "@/lib/cache";
-import { getClient } from "@/lib/contentful/client";
-import { LangKey, RegionKey, getI18nFromRegionAndLang } from "@/lib/locale";
-import { getContentIds } from "@/lib/page";
+import { ContentCreator } from "@components/creators/contents";
+import { getClient } from "@lib/contentful/client";
+import {
+  LangKey,
+  RegionKey,
+  getI18nFromRegionAndLang,
+} from "@lib/i18n/locales";
+import { LayersProviders, initializeLayers } from "@lib/layers";
+import { initializeSegmentLayer } from "@lib/layers/segments/server";
+import { getCurrentLocale, getCurrentPageId } from "@lib/layers/state/server";
+import { getContentIds } from "@lib/page";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -30,33 +35,29 @@ export async function generateStaticParams({ params }: PageProps) {
 }
 
 export default async function Page({ params }: PageProps) {
-  const { region, lang, slug } = params;
+  const { slug } = params;
 
   if (!slug) {
     console.log("Couldn't find slug:", params);
     return notFound();
   }
 
-  const { locale } = getI18nFromRegionAndLang(params);
-  const { bySlug } = await initializeSegmentLayer(locale);
+  const props = await initializeLayers(params);
+  const pageId = getCurrentPageId();
 
-  const page =
-    bySlug[
-      [region, lang, ...slug.map((slug) => decodeURIComponent(slug))].join("/")
-    ];
-
-  if (!page) {
+  if (!pageId) {
     console.log("Could not find pageId", params);
     return notFound();
   }
 
   const client = getClient();
-  const pageProps = await client.getEntry(page.id, { locale });
+  const locale = getCurrentLocale();
+  const pageProps = await client.getEntry(pageId, { locale });
 
   if (!pageProps) {
     console.log("Could not find Page or pageProps", {
       ...params,
-      pageId: page.id,
+      pageId,
     });
     return notFound();
   }
@@ -66,13 +67,16 @@ export default async function Page({ params }: PageProps) {
   const contentIds = getContentIds(pageProps);
 
   const contents = contentIds.map(({ id, contentId }) =>
+    /* @ts-ignore */
     ContentCreator(id, contentId, locale),
   );
 
   return (
     <div>
-      <h1>{title}</h1>
-      {contents}
+      <LayersProviders {...props}>
+        <h1>{title}</h1>
+        {contents}
+      </LayersProviders>
     </div>
   );
 }

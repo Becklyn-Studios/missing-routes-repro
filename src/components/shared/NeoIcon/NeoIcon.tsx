@@ -1,3 +1,4 @@
+import { cn } from "@lib/util";
 import React, { HTMLAttributes } from "react";
 import { getIcon, IconKey } from "./icon/index";
 
@@ -29,7 +30,7 @@ export const NeoIcon: React.FC<NeoIconProps> = ({
 
   return (
     <div
-      className={`neo-icon ${className}`}
+      className={cn("neo-icon", className)}
       aria-label={icon}
       role="img"
       style={{

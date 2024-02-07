@@ -1,6 +1,7 @@
 "use client";
 
 import React, { MouseEventHandler, PropsWithChildren } from "react";
+import { cn } from "@lib/util";
 import Link from "next/link";
 
 export interface NeoLinkProps {
@@ -19,23 +20,37 @@ export const NeoLink: React.FC<PropsWithChildren<NeoLinkProps>> = ({
   target,
   noUppercase,
   hideMarker,
+  variant = "dark",
   onClick,
   children,
 }) => {
-  if (!href) {
+  if (!href && !onClick) {
     return;
   }
 
+  if (href) {
+    return (
+      <Link
+        className={cn("neo-link", variant)}
+        href={href}
+        target={href?.includes("#") ? "_self" : target}
+        style={noUppercase ? { textTransform: "none" } : {}}
+      >
+        {hideMarker ? null : "›\xa0"}
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      className={"neo-link"}
-      href={onClick ? "#" : href}
+    <a
+      className={cn("neo-link", variant)}
       onClick={onClick}
-      target={href.includes("#") ? "_self" : target}
+      target={href?.includes("#") ? "_self" : target}
       style={noUppercase ? { textTransform: "none" } : {}}
     >
       {hideMarker ? null : "›\xa0"}
       {children}
-    </Link>
+    </a>
   );
 };
