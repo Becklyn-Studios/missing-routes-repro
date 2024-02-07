@@ -1,5 +1,7 @@
 import { ContentCreator } from "@components/creators/contents";
-import { getClient } from "@lib/contentful/client";
+import { PageCreator, PageId } from "@components/creators/pages";
+import { getPageById } from "@lib/contentful/api/page";
+import { normalizer } from "@lib/contentful/normalizer";
 import {
   LangKey,
   RegionKey,
@@ -8,7 +10,8 @@ import {
 import { LayersProviders, initializeLayers } from "@lib/layers";
 import { initializeSegmentLayer } from "@lib/layers/segments/server";
 import { getCurrentLocale, getCurrentPageId } from "@lib/layers/state/server";
-import { getContentIds } from "@lib/page";
+import { getContentKeys, getPageKey } from "@lib/page";
+import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 
 interface PageProps {
@@ -50,33 +53,42 @@ export default async function Page({ params }: PageProps) {
     return notFound();
   }
 
-  const client = getClient();
-  const locale = getCurrentLocale();
-  const pageProps = await client.getEntry(pageId, { locale });
+  const { isEnabled } = draftMode();
 
-  if (!pageProps) {
-    console.log("Could not find Page or pageProps", {
-      ...params,
-      pageId,
-    });
+  const locale = getCurrentLocale();
+  const page = await getPageById(
+    pageId,
+    { locale },
+    { isDraftMode: isEnabled },
+  );
+
+  if (!page) {
+    console.log("Could not find page", { ...params, pageId });
     return notFound();
   }
 
-  const title = pageProps.fields.title as string;
+  const pageKey = getPageKey(page);
+  const contentIds = getContentKeys(page);
 
-  const contentIds = getContentIds(pageProps);
+  if (!pageKey) {
+    console.log("Could not find pageKey", { ...params, pageId });
+    return notFound();
+  }
 
-  const contents = contentIds.map(({ id, contentId }) =>
-    /* @ts-ignore */
-    ContentCreator(id, contentId, locale),
+  const contents = contentIds.map(({ id, contentId }: any) =>
+    ContentCreator(id, contentId, {}),
   );
+  const Page = PageCreator(pageKey as PageId);
+  const pageProps = normalizer(page.fields);
+
+  if (!Page || !pageProps) {
+    console.log("Could not find Page or pageProps", { ...params, pageId });
+    return notFound();
+  }
 
   return (
     <div>
-      <LayersProviders {...props}>
-        <h1>{title}</h1>
-        {contents}
-      </LayersProviders>
+      <LayersProviders {...props}>{contents}</LayersProviders>
     </div>
   );
 }

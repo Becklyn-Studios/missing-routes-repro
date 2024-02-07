@@ -1,0 +1,75 @@
+@import "@css/scss/utilities";
+
+.neo-cms-product-page-intro {
+    .pageIntro {
+        &__stage {
+            background: $grey-10;
+            position: relative;
+            margin-bottom: 1rem;
+
+            @include ieonly {
+                display: block;
+            }
+
+            .neo-product-stage {
+                @include gridWidth;
+                display: grid;
+            }
+        }
+
+        &__content {
+            @include cmsComponent;
+            margin-top: 0;
+
+            @include fromBreakpointL {
+                margin-top: 0;
+            }
+
+            .neo-breadcrumb {
+                @include span(12);
+                display: none;
+                margin-top: 3rem;
+
+                @include fromBreakpointM {
+                    display: inline-block;
+                    margin-top: 2rem;
+                }
+
+                @include fromBreakpointL {
+                    margin-top: 3rem;
+                }
+            }
+
+            .neo-paragraph {
+                sup,
+                sub {
+                    line-height: 2.1rem;
+                }
+
+                @include span(12);
+                margin-top: 3rem;
+
+                @include fromBreakpointM {
+                    margin-top: 6rem;
+                }
+
+                @include fromBreakpointL {
+                    @include startSpanOffset(8, 2);
+                    margin-top: 8rem;
+                }
+
+                &:empty {
+                    margin-top: 0;
+
+                    @include fromBreakpointM {
+                        margin-top: 1rem;
+                    }
+
+                    @include fromBreakpointL {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

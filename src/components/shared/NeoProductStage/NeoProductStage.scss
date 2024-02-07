@@ -1,0 +1,74 @@
+@import "@css/scss/utilities";
+
+.neo-product-stage {
+    display: inline-block;
+    background: $grey-10;
+    padding: 0.5rem 0;
+
+    @include fromBreakpointM {
+        padding: 2.5rem 0;
+    }
+
+    @include fromBreakpointL {
+        padding: 4.5rem 0;
+    }
+
+    @include grid(1, 20);
+
+    .neo-application-icon {
+        display: none;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+
+    .neo-button {
+        margin: 2rem 0;
+
+        @include fromBreakpointButton {
+            margin-right: 2rem;
+        }
+    }
+
+    @include fromBreakpointM {
+        @include grid(12, 40);
+
+        .column {
+            &1 {
+                @include span(3);
+
+                .neo-image {
+                    margin-top: 2rem;
+
+                    @include fromBreakpointMax {
+                        margin-top: 2.7rem;
+                    }
+                }
+            }
+
+            &2 {
+                @include span(9);
+
+                .neo-application-icon {
+                    display: inline-flex;
+                    vertical-align: top;
+                    width: 8rem;
+                    margin: 2rem 6.5rem 2rem 0;
+
+                    @include fromBreakpointMax {
+                        margin-right: 8.7rem;
+                    }
+                }
+
+                .neo-paragraph {
+                    margin: 2rem 0 0;
+
+                    &:last-of-type {
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
