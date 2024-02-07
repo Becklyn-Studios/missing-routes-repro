@@ -1,0 +1,157 @@
+@import "@css/scss/utilities";
+
+.neo-cms-event-collection {
+    @include cmsComponent;
+    .neo-headline {
+        @include span(12);
+        margin-bottom: 2.5rem;
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+        @include fromBreakpointMax() {
+            margin-bottom: 4rem;
+        }
+    }
+
+    &.count-1 {
+        margin-bottom: -4rem;
+
+        .neo-event-teaser {
+            @include span(12);
+
+            .neo-headline {
+                margin-bottom: 0;
+            }
+
+            @include fromBreakpointM {
+                @include span(6);
+            }
+            @include fromBreakpointL {
+                @include span(4);
+            }
+        }
+
+        .neo-event-teaser:first-of-type {
+            @include fromBreakpointL {
+                @include startSpanOffset(4, 2);
+            }
+        }
+
+        .neo-link-wrapper {
+            @include span(12);
+            margin-bottom: 4rem;
+
+            @include fromBreakpointL() {
+                @include startSpanOffset(8, 2);
+            }
+        }
+
+        @include ieonly {
+            display: flex;
+            flex-wrap: wrap;
+
+            .neo-event-teaser:nth-of-type(2) {
+                @include fromBreakpointL {
+                    @include startSpanOffset(4, 2);
+                }
+            }
+        }
+    }
+
+    &.count-2 {
+        @include cmsComponent;
+        margin-bottom: -4rem;
+        .neo-event-teaser {
+            @include span(12);
+
+            .neo-headline {
+                margin-bottom: 0;
+            }
+
+            @include fromBreakpointM {
+                @include span(6);
+            }
+            @include fromBreakpointMax {
+                @include span(4);
+            }
+        }
+
+        .neo-event-teaser:first-of-type {
+            @include fromBreakpointMax {
+                @include startSpanOffset(4, 2);
+            }
+        }
+
+        .neo-link-wrapper {
+            margin-bottom: 4rem;
+            @include span(12);
+            @include fromBreakpointL() {
+                @include startSpanOffset(8, 2);
+            }
+        }
+
+        @include ieonly {
+            display: flex;
+            flex-wrap: wrap;
+            .neo-event-teaser {
+                @include fromBreakpointM {
+                    margin-right: 4rem;
+                }
+            }
+            .neo-event-teaser:nth-of-type(odd) {
+                @include fromBreakpointM {
+                    margin-right: 0;
+                }
+            }
+
+            .neo-event-teaser:nth-of-type(even) {
+                @include fromBreakpointMax {
+                    @include startSpanOffset(4, 2);
+                }
+            }
+        }
+    }
+
+    &.count-more {
+        margin-bottom: -4rem;
+
+        @include ieonly {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .neo-event-teaser {
+            @include span(12);
+
+            .neo-headline {
+                margin-bottom: 0;
+            }
+
+            @include fromBreakpointM {
+                @include span(6);
+                @include ieonly {
+                    &:nth-child(2n + 1) {
+                        margin-right: 0;
+                    }
+                }
+            }
+            @include fromBreakpointL {
+                @include span(4);
+                @include ieonly {
+                    &:nth-child(2n + 1) {
+                        margin-right: 3.9rem; // -1px to avoid line breaking due to ie11 rounding errors
+                    }
+
+                    &:nth-child(3n + 1) {
+                        margin-right: 0; // WTF IE11?!
+                    }
+                }
+            }
+        }
+
+        .neo-link-wrapper {
+            @include span(12);
+            margin-bottom: 4rem;
+        }
+    }
+}

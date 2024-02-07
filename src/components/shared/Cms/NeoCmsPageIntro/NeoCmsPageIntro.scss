@@ -1,0 +1,368 @@
+@import "@css/scss/utilities";
+
+.neo-cms-page-intro {
+    $header-height: 10.5rem;
+
+    .intro {
+        &__video-wrapper {
+            width: 100%;
+            position: relative;
+
+            &:before {
+                content: "";
+                display: block;
+                @include aspectRatio(16, 9);
+            }
+
+            @include fromBreakpointL {
+                height: calc(100vh - #{$header-height});
+
+                &:before {
+                    content: none;
+                }
+            }
+
+            + .intro__content .intro__date {
+                @include fromBreakpointM {
+                    margin: 0 auto 3rem;
+                    color: $white;
+                    text-shadow: 0 0.2rem 2rem rgba(29, 29, 27, 0.95);
+                }
+
+                @include fromBreakpointL {
+                    margin-bottom: 6rem;
+                }
+            }
+
+            + .intro__content .neo-cms-tags {
+                margin-right: 0;
+
+                @include fromBreakpointM {
+                    margin: 0 auto 3rem;
+                }
+            }
+
+            .neo-background-video {
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                object-fit: cover;
+                transition: transform 0.3s;
+            }
+        }
+    }
+
+    .intro {
+        &__stage {
+            position: relative;
+
+            .intro__content-wrapper {
+                background-color: white;
+            }
+
+            .intro__img-wrapper {
+                width: 100%;
+                position: relative;
+
+                .intro__img {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    object-fit: cover;
+                    transition: transform 0.3s;
+                }
+
+                &:before {
+                    @include aspectRatio(16, 9);
+                    content: "";
+                    display: block;
+                }
+
+                @include fromBreakpointL {
+                    height: calc(100vh - #{$header-height});
+
+                    &:before {
+                        content: none;
+                    }
+                }
+            }
+
+            @include fromBreakpointL {
+                height: calc(100vh - #{$header-height});
+
+                &:before {
+                    content: none;
+                }
+            }
+
+            .intro__content .intro__date {
+                @include fromBreakpointM {
+                    margin: 0 auto 3rem;
+                    color: $white;
+                    text-shadow: 0 0.2rem 2rem rgba(29, 29, 27, 0.95);
+                }
+
+                @include fromBreakpointL {
+                    margin-bottom: 6rem;
+                }
+            }
+
+            @include fromBreakpointM {
+                position: relative;
+                display: flex;
+                margin-bottom: 1rem;
+
+                @include ieonly {
+                    display: block;
+                }
+
+                .intro__content {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    align-self: center;
+
+                    @include ieonly {
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+
+                .neo-cms-headline {
+                    margin-top: 0 !important;
+
+                    @include ieonly {
+                        align-self: center;
+                    }
+
+                    .neo-headline {
+                        text-align: center;
+                        color: #fff;
+                        text-shadow: 0 0.2rem 2rem rgba(29, 29, 27, 0.95);
+                    }
+                }
+            }
+
+            @include fromBreakpointL {
+                margin-bottom: 3.5rem;
+            }
+
+            @include fromBreakpointMax {
+                justify-content: center;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        &__date {
+            @include span(12);
+            @include fontHeadlineXs();
+            margin: 3rem 0 0;
+            color: $grey-55;
+
+            @include fromBreakpointM {
+                margin-top: 6rem;
+            }
+
+            @include ieonly {
+                text-align: center;
+            }
+        }
+
+        &__connector {
+            display: none;
+
+            @include fromBreakpointL {
+                @include fontCopyMedium();
+                display: block;
+                width: 100%;
+                left: 50%;
+                text-align: center;
+                color: $white;
+                background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.5) 100%
+                );
+                position: absolute;
+                transform: translateX(-50%);
+                bottom: 0;
+                text-transform: uppercase;
+                letter-spacing: 0.05rem;
+                font-size: 1.4rem;
+                line-height: 7rem;
+                padding-bottom: 5rem;
+                padding-top: 6rem;
+
+                &-clickable {
+                    cursor: pointer;
+                    display: inline-block;
+
+                    &:before,
+                    &:after {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        animation: bounce 2s infinite;
+                    }
+
+                    &:before {
+                        content: "";
+                        display: block;
+                        border-radius: 50%;
+                        border: 0.2rem solid $red-dark;
+                        width: 3.6rem;
+                        height: 3.6rem;
+                        bottom: 2rem;
+                    }
+
+                    &:after {
+                        content: "";
+                        /* SVG is urlencoded using https://meyerweb.com/eric/tools/dencoder/  */
+                        background-image: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20384%20512%22%3E%3Cpath%20fill%3D%22%23c51a1b%22%20d%3D%22M374.6%20310.6l-160%20160C208.4%20476.9%20200.2%20480%20192%20480s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75%200-45.25s32.75-12.5%2045.25%200L160%20370.8V64c0-17.69%2014.33-31.1%2031.1-31.1S224%2046.31%20224%2064v306.8l105.4-105.4c12.5-12.5%2032.75-12.5%2045.25%200S387.1%20298.1%20374.6%20310.6z%22%2F%3E%3C%2Fsvg%3E%0A);
+                        background-size: 2rem 2rem;
+                        height: 2rem;
+                        width: 2rem;
+                        bottom: 2.7rem;
+                    }
+                }
+
+                @keyframes bounce {
+                    0%,
+                    20%,
+                    50%,
+                    80%,
+                    100% {
+                        transform: translate(-50%, 0);
+                    }
+
+                    40% {
+                        transform: translate(-50%, -1.3rem);
+                    }
+
+                    60% {
+                        transform: translate(-50%, -0.5rem);
+                    }
+                }
+            }
+        }
+
+        &__content {
+            @include cmsComponent;
+            margin-top: 0 !important;
+
+            .neo-cms-tags {
+                margin-top: 3rem;
+                margin-right: 0;
+
+                @include fromBreakpointM {
+                    @include span(12);
+                    margin-top: 6rem;
+                }
+            }
+
+            .neo-breadcrumb {
+                @include span(12);
+                display: none;
+                margin-top: 3rem;
+
+                @include fromBreakpointM {
+                    display: inline-block;
+                    margin-top: 2rem;
+                }
+
+                @include fromBreakpointL {
+                    margin-top: 3rem;
+                }
+            }
+
+            .neo-cms-headline {
+                @include span(12);
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 3rem;
+
+                @include fromBreakpointM {
+                    margin-top: 6rem;
+                }
+
+                @include fromBreakpointL {
+                    margin-top: 6rem;
+                }
+            }
+
+            .neo-paragraph {
+                @include span(12);
+                margin-top: 3rem;
+
+                sup,
+                sub {
+                    line-height: 1.8rem;
+                }
+
+                @include fromBreakpointM {
+                    margin-top: 6rem;
+                }
+
+                @include fromBreakpointL {
+                    @include startSpanOffset(8, 2);
+                    margin-top: 8rem;
+                }
+
+                &:empty {
+                    margin-top: 0;
+
+                    @include fromBreakpointM {
+                        margin-top: 1rem;
+                    }
+
+                    @include fromBreakpointL {
+                        margin-top: 2rem;
+                    }
+                }
+            }
+
+            .intro__links {
+                @include span(12);
+                overflow: hidden;
+
+                @include fromBreakpointL {
+                    @include startSpanOffset(8, 2);
+                }
+
+                &-overflow {
+                    margin-right: -3rem;
+                }
+
+                .neo-button {
+                    margin-right: 3rem;
+                    margin-top: 3rem;
+                }
+            }
+        }
+    }
+
+    .intro__content .intro__links .neo-button {
+        width: 100%;
+
+        @include fromBreakpointButton {
+            width: auto;
+        }
+    }
+}

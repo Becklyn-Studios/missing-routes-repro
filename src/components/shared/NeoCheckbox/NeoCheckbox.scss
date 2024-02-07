@@ -1,0 +1,44 @@
+@import "@css/scss/utilities";
+
+.neo-checkbox {
+    display: inline-block;
+
+    label {
+        @include fontCopy;
+        display: flex;
+        align-items: baseline;
+        color: $grey;
+        cursor: pointer;
+
+        input {
+            margin-right: 1rem;
+        }
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    &.disabled {
+        label {
+            color: $grey-25;
+            cursor: not-allowed;
+        }
+    }
+
+    .error {
+        @include fontCopy;
+        font-size: 1.2rem;
+        color: $red;
+        margin-left: 0.5rem;
+
+        .neo-icon {
+            position: relative;
+            width: 2rem;
+            height: 2rem;
+            fill: $red;
+            color: $red;
+            top: 0.5rem;
+        }
+    }
+}

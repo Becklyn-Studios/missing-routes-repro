@@ -1,0 +1,18 @@
+@import "@css/scss/utilities";
+
+.neo-iframe {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    margin-top: 6rem;
+    overflow: hidden;
+
+    @include fromBreakpointM() {
+        margin-top: calc(#{$cms-component-margin-top} - .8rem);
+
+        @include fromBreakpointMax() {
+            margin-top: calc(#{$cms-component-margin-top-max} - .8rem);
+        }
+    }
+}

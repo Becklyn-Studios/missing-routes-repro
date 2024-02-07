@@ -1,0 +1,13 @@
+@import "@css/scss/utilities";
+
+.neo-cms-headline {
+    @include cmsComponent;
+
+    .neo-headline {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+    }
+}

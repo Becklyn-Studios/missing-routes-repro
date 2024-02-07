@@ -1,0 +1,17 @@
+@import "@css/scss/utilities";
+
+.neo-cms-link-list {
+    @include cmsComponent;
+
+    .neo-link-list {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include startSpanOffset(12, 0);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+}

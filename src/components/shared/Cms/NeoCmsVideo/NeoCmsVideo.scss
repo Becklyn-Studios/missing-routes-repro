@@ -1,0 +1,26 @@
+@import "@css/scss/utilities";
+
+.neo-cms-video {
+    @include cmsComponent;
+
+    .neo-headline {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    .neo-video {
+        @include span(12);
+        margin-top: 2.5rem;
+
+        @include fromBreakpointMax() {
+            margin-top: 4rem;
+        }
+    }
+}

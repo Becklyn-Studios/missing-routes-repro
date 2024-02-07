@@ -1,53 +1,53 @@
 @import "@css/scss/utilities";
 
 .neo-cms-contact-collection {
-  .contactCollection {
-    @include cmsComponent();
-
-    .neo-headline {
-      @include span(12);
-
-      @include fromBreakpointL() {
-        @include startSpanOffset(8, 2);
-      }
-    }
-
-    .neo-contact {
-      margin-top: 3.5rem;
-
-      @include fromBreakpointL() {
-        margin-top: 5rem;
-      }
-
-      @include span(12);
-
-      @include fromBreakpointL() {
-        @include startSpanOffset(8, 2);
-      }
-    }
-  }
-
-  &.multiple {
     .contactCollection {
-      .neo-contact {
-        @include span(12);
+        @include cmsComponent();
 
-        @include fromBreakpointL() {
-          @include span(6);
+        .neo-headline {
+            @include span(12);
 
-          &:nth-of-type(odd) {
-            margin-right: 0;
-          }
+            @include fromBreakpointL() {
+                @include startSpanOffset(8, 2);
+            }
         }
-      }
-    }
-  }
 
-  &.background {
-    background-color: $grey-10;
+        .neo-contact {
+            margin-top: 3.5rem;
 
-    .contactCollection {
-      padding: 4rem 0;
+            @include fromBreakpointL() {
+                margin-top: 5rem;
+            }
+
+            @include span(12);
+
+            @include fromBreakpointL() {
+                @include startSpanOffset(8, 2);
+            }
+        }
     }
-  }
+
+    &.multiple {
+        .contactCollection {
+            .neo-contact {
+                @include span(12);
+
+                @include fromBreakpointL() {
+                    @include span(6);
+
+                    &:nth-of-type(odd) {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.background {
+        background-color: $grey-10;
+
+        .contactCollection {
+            padding: 4rem 0;
+        }
+    }
 }

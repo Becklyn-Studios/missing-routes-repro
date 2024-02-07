@@ -1,0 +1,26 @@
+.neo-background-video {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+
+    .background__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            max-width: none;
+            min-width: 100%;
+            min-height: 100%;
+        }
+    }
+}

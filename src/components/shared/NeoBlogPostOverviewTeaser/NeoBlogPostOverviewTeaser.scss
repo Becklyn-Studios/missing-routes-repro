@@ -1,0 +1,68 @@
+@import "@css/scss/utilities";
+@import "../NeoCard/NeoCard";
+
+.neo-blog-post-overview-teaser {
+    @include fontCopy();
+    position: relative;
+    display: flex;
+
+    .card-tags {
+        margin-top: 1rem;
+    }
+
+    .card-information {
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 0 0 0;
+        margin-bottom: 3.5rem;
+
+        .card-date {
+            display: flex;
+            align-items: center;
+            color: $grey-55;
+            margin-right: 3.5rem;
+        }
+
+        .card-author {
+            display: flex;
+            align-items: center;
+            color: $grey-55;
+        }
+    }
+
+    .neo-icon {
+        height: 1.8rem;
+        min-height: 1.8rem;
+        width: 1.8rem;
+        fill: $grey-55;
+        margin-right: 1rem;
+    }
+
+    &.teaser-gold {
+        .neo-card,
+        .neo-headline,
+        .card-date,
+        .card-author {
+            color: $white;
+        }
+
+        .neo-card {
+            background-color: $gold;
+        }
+
+        .neo-tag {
+            color: $gold;
+            background-color: $white;
+        }
+
+        .card-link {
+            .neo-icon {
+                fill: $red-dark;
+            }
+        }
+
+        .neo-icon {
+            fill: $white;
+        }
+    }
+}

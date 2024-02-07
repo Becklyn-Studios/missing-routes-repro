@@ -1,0 +1,20 @@
+@import "@css/scss/utilities";
+
+.neo-cms-newsletter {
+    @include cmsComponent;
+    margin-top: 0;
+
+    .neo-subscribe-newsletter,
+    .neo-unsubscribe-newsletter {
+        @include span(12);
+        margin-top: 0;
+
+        @include fromBreakpointM {
+            @include startSpanOffset(6, 3);
+        }
+    }
+
+    @include fromBreakpointMax {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,20 @@
+@import "@css/scss/utilities";
+
+.neo-info-text {
+    display: block;
+    position: relative;
+    margin-top: 4rem;
+
+    .neo-icon {
+        position: absolute;
+        left: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: $grey;
+    }
+
+    .neo-icon + .neo-paragraph {
+        display: block;
+        padding-left: 3.5rem;
+    }
+}

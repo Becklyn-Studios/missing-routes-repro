@@ -1,0 +1,58 @@
+@import "@css/scss/utilities";
+
+.neo-cms-slider {
+    margin: 6rem 1rem 0 1rem;
+
+    @include fromBreakpointM() {
+        @include cmsComponent;
+    }
+
+    .neo-headline {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    .neo-slider {
+        @include span(1, 1);
+        margin-top: 2.5rem;
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+
+        @include fromBreakpointMax() {
+            margin-top: 4rem;
+        }
+    }
+
+    &.small {
+        .neo-slider {
+            @include fromBreakpointM() {
+                @include span(8, 12);
+            }
+
+            @include fromBreakpointL() {
+                @include startSpanOffset(6, 2);
+            }
+        }
+    }
+
+    &.wide {
+        .neo-slider {
+            @include fromBreakpointL() {
+                @include startSpanOffset(12, 0);
+            }
+        }
+    }
+}

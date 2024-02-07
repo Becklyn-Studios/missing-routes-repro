@@ -1,0 +1,49 @@
+@import "@css/scss/utilities";
+
+.neo-logo-slider {
+    .wrapper {
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .sliding-background {
+        min-height: 4em;
+        height: 100%;
+        animation: sliding 1800s linear infinite;
+        min-width: 750%;
+        width: auto;
+
+        @include fromBreakpoint(359px) {
+            min-height: 6em;
+        }
+
+        @include fromBreakpoint(411px) {
+            min-height: 8em;
+        }
+
+        @include fromBreakpoint(539px) {
+            min-height: 10em;
+        }
+
+        @include fromBreakpoint(768px) {
+            min-height: 12em;
+        }
+
+        @include fromBreakpoint(911px) {
+            min-height: 14em;
+        }
+    }
+
+    @keyframes sliding {
+        from {
+            background-position: 0 0;
+        }
+
+        /*use negative width if you want it to flow right to left else and positive for left to right*/
+        to {
+            background-position: -10000rem 0;
+        }
+    }
+}

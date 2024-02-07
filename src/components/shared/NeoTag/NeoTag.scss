@@ -1,0 +1,12 @@
+@import "@css/scss/utilities";
+
+.neo-tag {
+    display: inline-flex;
+    justify-content: center;
+    background-color: $gold;
+    text-transform: uppercase;
+    color: $white;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin-right: 2rem;
+}

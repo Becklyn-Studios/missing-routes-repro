@@ -1,0 +1,103 @@
+@import "@css/scss/utilities";
+
+@mixin neoBlogInfoPostIcon() {
+    height: 1.8rem;
+    min-height: 1.8rem;
+    width: 1.8rem;
+    fill: $white;
+    margin-right: 1rem;
+}
+
+.neo-blog-info-box {
+    @include fontCopy();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: $gold;
+
+    @include fromBreakpointL {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .neo-blog-info-box-detail {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        color: $white;
+
+        @include fromBreakpointL {
+            flex-direction: row;
+            flex-grow: 1;
+            flex-wrap: wrap;
+        }
+
+        .detail-user {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+
+            .detail-user-author {
+                margin-right: 1.5rem;
+            }
+
+            @include fromBreakpointL {
+                flex-grow: 1;
+            }
+        }
+
+        .detail-reading-time {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 1rem;
+
+            @include fromBreakpointL {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .share {
+        display: flex;
+        justify-content: center;
+        color: $white;
+        margin-top: 1rem;
+
+        .share-label {
+            margin-right: 3rem;
+        }
+
+        .socialMediaList {
+            margin-top: -0.2rem;
+
+            .neo-icon {
+                @include neoBlogInfoPostIcon();
+            }
+
+            > li {
+                margin: 0;
+                height: 1.8rem;
+            }
+
+            @include fromBreakpointL {
+                margin-top: -1.5rem;
+            }
+        }
+
+        @include fromBreakpointL {
+            flex-grow: 1;
+            align-items: center;
+            justify-content: flex-end;
+            white-space: nowrap;
+            margin-top: 0;
+        }
+    }
+
+    .neo-icon {
+        @include neoBlogInfoPostIcon();
+    }
+}

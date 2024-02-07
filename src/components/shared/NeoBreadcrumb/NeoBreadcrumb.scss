@@ -1,0 +1,42 @@
+@import "@css/scss/utilities";
+
+.neo-breadcrumb {
+    @include fontCopyS;
+    color: $grey-55;
+
+    .neo-breadcrumb-title,
+    .neo-breadcrumb-link {
+        text-decoration: none;
+        color: inherit;
+        float: left;
+        padding-right: 0.8rem;
+        position: relative;
+        top: -0.1rem;
+    }
+
+    .neo-breadcrumb-link {
+        &:hover {
+            color: $primary;
+        }
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+    }
+
+    .neo-breadcrumb-title {
+        cursor: default;
+    }
+
+    .neo-icon {
+        width: 2.3rem;
+        height: 2.2rem;
+        fill: $grey-55;
+        float: left;
+        padding-right: 0.8rem;
+
+        @include ieonly {
+            width: 2.5rem;
+        }
+    }
+}

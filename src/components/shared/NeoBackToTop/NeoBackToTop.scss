@@ -1,0 +1,30 @@
+@import "@css/scss/utilities";
+
+$button-size: 4rem;
+
+.neo-back-to-top {
+    width: $button-size;
+    height: $button-size;
+    background-color: $primary-variant;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .neo-icon {
+        width: $button-size / 2;
+        height: $button-size / 2;
+        fill: $white;
+        color: $white;
+    }
+
+    @include fromBreakpointL {
+        width: $button-size + 1rem;
+        height: $button-size + 1rem;
+
+        .neo-icon {
+            width: ($button-size + 1rem) / 2;
+            height: ($button-size + 1rem) / 2;
+        }
+    }
+}

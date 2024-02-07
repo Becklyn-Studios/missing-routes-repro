@@ -1,0 +1,46 @@
+@import "@css/scss/utilities";
+
+.neo-cms-table {
+    @include cmsComponent();
+
+    @include fromBreakpointM() {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    table {
+        @include fontCopy();
+        border-collapse: collapse;
+
+        th,
+        td {
+            border: 0.1rem solid $black;
+            white-space: nowrap;
+            padding: 0.5rem 1.5rem;
+        }
+
+        th {
+            text-align: left;
+        }
+
+        td {
+            text-align: center;
+            padding: 0.5rem 1.5rem;
+        }
+
+        img {
+            max-width: none;
+        }
+    }
+
+    .table__wrapper {
+        overflow: auto;
+    }
+
+    .neo-headline {
+        margin-bottom: 2.5rem;
+
+        @include fromBreakpointMax() {
+            margin-bottom: 4rem;
+        }
+    }
+}

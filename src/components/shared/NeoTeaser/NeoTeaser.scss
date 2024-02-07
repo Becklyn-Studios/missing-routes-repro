@@ -1,0 +1,174 @@
+@import "@css/scss/utilities";
+
+$border-vertical-width: 6rem;
+$border-vertical-width-m: 16.3rem;
+$border-vertical-width-l: 5rem;
+$border-horizontal-width-m: 6.4rem;
+$border-horizontal-width-l: 5rem;
+
+.neo-teaser {
+    display: block;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    background-color: $grey-10;
+    background-clip: padding-box;
+    border-width: $border-vertical-width 0 0;
+    border-style: solid;
+    border-color: transparent;
+
+    @include fromBreakpointM {
+        margin-left: 0;
+        margin-right: 0;
+        border-top-width: $border-vertical-width-m;
+        border-left-width: $border-horizontal-width-m;
+    }
+
+    @include fromBreakpointL {
+        border-top-width: $border-vertical-width-l;
+        border-left-width: $border-horizontal-width-l;
+    }
+
+    &.image-right {
+        @include fromBreakpointM {
+            border-right-width: $border-horizontal-width-m;
+            border-left: 0;
+        }
+
+        @include fromBreakpointL {
+            border-right-width: $border-horizontal-width-l;
+        }
+
+        .teaser {
+            @include fromBreakpointL {
+                flex-direction: row-reverse;
+            }
+
+            &__imgWrapper {
+                @include fromBreakpointM {
+                    margin-left: auto;
+                    margin-right: -$border-horizontal-width-m;
+                }
+
+                @include fromBreakpointL {
+                    margin-left: 0;
+                    margin-right: -$border-horizontal-width-l;
+                }
+            }
+
+            &__content {
+                @include fromBreakpointL {
+                    margin-right: 4rem;
+                    margin-left: 0;
+                    padding-left: 4rem;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .teaser {
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        color: $grey-70;
+        padding-bottom: 2.5rem;
+        box-sizing: content-box;
+
+        &[href]:hover {
+            .teaser__img {
+                transform: scale(1.1);
+            }
+            .neo-headline {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+
+        @include fromBreakpointL {
+            flex-direction: row;
+        }
+
+        &__imgWrapper {
+            margin: -$border-vertical-width 1rem 0;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+
+            &:before {
+                @include aspectRatio(16, 9);
+                content: "";
+                display: block;
+            }
+
+            @include fromBreakpointM {
+                margin-top: -$border-vertical-width-m;
+                margin-left: -$border-horizontal-width-m;
+                width: 58%;
+            }
+
+            @include fromBreakpointL {
+                margin-top: -$border-vertical-width-l;
+                margin-right: 0;
+                margin-left: -$border-horizontal-width-l;
+                width: calc(100% + 4rem);
+                align-self: flex-start;
+            }
+        }
+
+        &__img {
+            display: block;
+            object-fit: cover;
+            font-family: "object-fit: cover;";
+            transition: transform 0.3s;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1rem 0;
+
+            .neo-headline {
+                width: 100%;
+                margin: 0;
+                flex-grow: 1;
+            }
+
+            .neo-paragraph {
+                margin-top: 1.5rem;
+                display: block;
+            }
+
+            @include fromBreakpointM {
+                padding-left: 6rem;
+                padding-right: 6rem;
+            }
+
+            @include fromBreakpointL {
+                padding: 6rem 4rem 0 0;
+                width: calc(100% - 4rem);
+                margin-left: 4rem;
+            }
+        }
+
+        &__link {
+            @include fontLink;
+            margin-top: 3rem;
+            padding-right: 3rem;
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            color: $primary-variant;
+
+            .neo-icon {
+                transform: rotate(180deg);
+                width: 2.5rem;
+                height: 2.5rem;
+                position: absolute;
+                bottom: 0.2rem;
+                right: 0;
+                fill: $primary-variant;
+                color: $primary-variant;
+            }
+        }
+    }
+}

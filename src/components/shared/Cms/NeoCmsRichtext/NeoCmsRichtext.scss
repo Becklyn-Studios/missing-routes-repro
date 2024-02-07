@@ -1,0 +1,33 @@
+@import "@css/scss/utilities";
+
+.neo-cms-richtext {
+    @include cmsComponent;
+
+    .neo-paragraph {
+        margin-top: 1.5rem;
+
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    .neo-list {
+        margin-top: 1.5rem;
+
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+}

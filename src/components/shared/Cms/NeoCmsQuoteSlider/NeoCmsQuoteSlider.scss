@@ -1,0 +1,59 @@
+@import "@css/scss/utilities";
+
+.neo-cms-quote-slider {
+    color: $grey;
+
+    .slider {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .controls {
+        background-color: $grey-10;
+
+        .controls-inner {
+            @include cmsComponent();
+            position: relative;
+            margin-top: 0;
+            height: 8rem;
+
+            @include fromBreakpointMax() {
+                margin-top: 0;
+            }
+
+            .controls-items {
+                position: absolute;
+                right: 0;
+
+                .slide-number {
+                    @include fontHeadlineS();
+                    position: absolute;
+                    top: 0.6rem;
+                    right: 4.8rem;
+
+                    @include fromBreakpointM {
+                        top: 0.2rem;
+                        right: 4.4rem;
+                    }
+
+                    @include fromBreakpointMax {
+                        top: 0;
+                        right: 4.2rem;
+                    }
+                }
+
+                .neo-icon {
+                    cursor: pointer;
+                    width: 4.8rem;
+                    margin-left: 1.5rem;
+                    fill: $red-dark;
+
+                    &.rotate {
+                        margin-right: 2rem;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

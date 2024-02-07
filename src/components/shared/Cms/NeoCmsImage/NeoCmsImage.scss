@@ -1,0 +1,55 @@
+@import "@css/scss/utilities";
+
+.neo-cms-image {
+    @include cmsComponent;
+    margin-top: 6rem;
+
+    .neo-headline {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    .neo-image {
+        @include span(1, 1);
+        margin-top: 2.5rem;
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+
+        @include fromBreakpointMax() {
+            margin-top: 4rem;
+        }
+    }
+
+    &.small {
+        .neo-image {
+            @include fromBreakpointM() {
+                @include span(8, 12);
+            }
+
+            @include fromBreakpointL() {
+                @include startSpanOffset(6, 2);
+            }
+        }
+    }
+
+    &.wide {
+        .neo-image {
+            @include fromBreakpointL() {
+                @include startSpanOffset(12, 0);
+            }
+        }
+    }
+}

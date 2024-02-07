@@ -1,0 +1,9 @@
+@import "@css/scss/utilities";
+
+.neo-cms-tags {
+    @include fontCopy();
+    display: flex;
+    justify-content: center;
+    margin-top: $cms-component-margin-top-max;
+    word-break: normal;
+}

@@ -1,0 +1,83 @@
+@import "@css/scss/utilities";
+
+@mixin btn-color-theme(
+    $color,
+    $color-hover,
+    $bg-color,
+    $bg-color-hover,
+    $border-color,
+    $border-color-hover
+) {
+    color: $color;
+    background-color: $bg-color;
+    border-color: $border-color;
+
+    &:hover {
+        color: $color-hover;
+        background-color: $bg-color-hover;
+        border-color: $border-color-hover;
+    }
+
+    &:not(a):disabled {
+        color: $grey-55;
+        background-color: transparent;
+        border-color: $grey-55;
+    }
+}
+
+@mixin btn-base() {
+    display: block;
+    padding: 0.4rem 2rem;
+    text-transform: uppercase;
+    border-width: 0.2rem;
+    border-style: solid;
+}
+
+.neo-button {
+    @include btn-base();
+    @include fontLink();
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+
+    @include fromBreakpointButton {
+        display: inline-block;
+        width: auto;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
+    &.primary {
+        @include btn-color-theme(
+            $white,
+            $white,
+            $primary-variant,
+            $primary,
+            $primary-variant,
+            $primary
+        );
+    }
+
+    &.secondary {
+        @include btn-color-theme($white, $white, $grey-55, $grey-35, $grey-55, $grey-35);
+    }
+
+    &.ghost {
+        @include btn-color-theme(
+            $primary-variant,
+            $primary,
+            transparent,
+            rgba($primary, 0.1),
+            $primary-variant,
+            $primary
+        );
+    }
+
+    &.ghost-dark {
+        @include btn-color-theme($white, $white, transparent, rgba($white, 0.2), $white, $white);
+    }
+}

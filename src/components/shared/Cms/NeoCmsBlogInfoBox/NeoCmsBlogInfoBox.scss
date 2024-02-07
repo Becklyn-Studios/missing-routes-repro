@@ -1,0 +1,14 @@
+@import "@css/scss/utilities";
+
+.neo-cms-blog-info-box {
+    @include cmsComponent();
+    display: block;
+
+    .neo-blog-info-box {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+}

@@ -1,0 +1,99 @@
+@import "@css/scss/utilities";
+
+.neo-cms-tile-collection {
+    @include cmsComponent;
+    margin-bottom: -4rem;
+
+    .neo-headline {
+        @include span(12);
+        margin-bottom: 1.5rem;
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    .neo-paragraph {
+        @include span(12);
+        margin-bottom: 2.5rem;
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+
+        @include fromBreakpointMax() {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .neo-tile {
+        @include span(12);
+        margin-bottom: 4rem;
+
+        .tile__icon-wrapper img {
+            width: 50%;
+        }
+
+        &:nth-of-type(odd) {
+            @include fromBreakpointL {
+                @include startSpanOffset(4, 2);
+            }
+        }
+
+        @include fromBreakpointM {
+            @include span(6);
+        }
+
+        @include fromBreakpointL {
+            @include span(4);
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4rem;
+
+        .neo-button {
+            width: inherit;
+        }
+
+        @include fromBreakpointM() {
+            @include startSpanOffset(8, 2);
+        }
+    }
+
+    &.max-tiles-per-row-3 {
+        @include ieonly {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .neo-tile {
+            @include span(12);
+
+            @include fromBreakpointM {
+                @include span(6);
+            }
+
+            @include fromBreakpointL {
+                @include span(4);
+            }
+        }
+    }
+
+    &.max-tiles-per-row-4 {
+        .neo-tile {
+            @include span(12);
+
+            @include fromBreakpointM {
+                @include span(6);
+            }
+
+            @include fromBreakpointL {
+                @include span(3);
+            }
+        }
+    }
+}

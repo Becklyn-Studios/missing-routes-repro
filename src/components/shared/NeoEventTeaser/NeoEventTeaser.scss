@@ -1,0 +1,81 @@
+@import "@css/scss/utilities";
+
+.neo-event-teaser {
+    position: relative;
+    display: flex;
+    margin-bottom: 4rem;
+    background-color: $grey-10;
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: $grey;
+
+    &[href]:hover {
+        .card__img {
+            transform: scale(1.1);
+        }
+        .neo-headline {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+
+    .event-teaser__date {
+        @include fontCopy;
+        display: flex;
+        color: $grey-55;
+        margin-bottom: -1.5rem;
+        padding: 1.5rem 2rem 0 2rem;
+
+        .neo-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 1.5rem;
+            fill: currentColor;
+        }
+    }
+    .event-teaser__content {
+        padding: 2rem 2.5rem 2rem 2rem;
+        box-sizing: border-box;
+        flex: 1;
+        flex-basis: auto;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .neo-event-teaser-children {
+            .neo-paragraph {
+                margin-top: 1.5rem;
+            }
+        }
+
+        > .neo-paragraph {
+            flex: 1 auto;
+            margin-top: 0;
+        }
+    }
+
+    .event-teaser__link {
+        margin-top: auto;
+        padding-top: 2.5rem;
+        padding-right: 2.5rem;
+        position: relative;
+        display: inline-block;
+        text-transform: uppercase;
+        color: $primary-variant;
+        @include fontCopy;
+
+        .neo-icon {
+            transform: rotate(180deg);
+            width: 2.5rem;
+            height: 2.5rem;
+            position: absolute;
+            bottom: 0.2rem;
+            right: 0;
+            fill: $primary-variant;
+            color: $primary-variant;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+@import "@css/scss/utilities";
+
+.neo-cms-article-listing {
+    @include cmsComponent;
+
+    .neo-tabs {
+        @include span(12);
+    }
+}

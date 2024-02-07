@@ -1,0 +1,32 @@
+@import "@css/scss/utilities";
+
+.neo-cms-teaser {
+    .cms-teaser {
+        @include cmsComponent;
+    }
+
+    .neo-headline {
+        @include span(1, 1);
+        margin-bottom: 2.5rem;
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+
+        @include fromBreakpointL() {
+            @include startSpanOffset(8, 2);
+        }
+
+        @include fromBreakpointMax() {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .neo-teaser {
+        @include span(1, 1);
+
+        @include fromBreakpointM() {
+            @include span(12);
+        }
+    }
+}
