@@ -1,0 +1,321 @@
+@import "@css/scss/utilities";
+
+.neo-cms-text-media {
+  .text-media {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 6rem;
+
+    .media,
+    .content {
+      flex: 1;
+    }
+
+    @include fromBreakpointM() {
+      flex-direction: row;
+      gap: 4rem;
+      margin-top: calc(#{$cms-component-margin-top} - 0.8rem);
+      margin-left: 3rem;
+      margin-right: 3rem;
+
+      .media {
+        flex: 40%;
+        margin-top: 0.8rem;
+      }
+
+      .content {
+        flex: 60%;
+      }
+    }
+
+    @include fromBreakpointL() {
+      .media,
+      .content {
+        flex: 1;
+      }
+    }
+
+    @include fromBreakpointMax {
+      max-width: 122rem;
+      margin-top: calc(#{$cms-component-margin-top-max} - 0.8rem);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .neo-headline {
+      display: block;
+      margin-top: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .neo-headline.level-2 {
+      @include fromBreakpointM() {
+        margin-top: -0.5rem;
+      }
+    }
+
+    .neo-headline.level-3 {
+      @include fromBreakpointM() {
+        margin-top: -0.3rem;
+      }
+    }
+
+    .neo-headline.level-4 {
+      @include fromBreakpointM() {
+        margin-top: -0.3rem;
+      }
+    }
+
+    .neo-paragraph {
+      display: block;
+      margin-bottom: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > p {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .neo-list {
+      margin-bottom: 1.5rem;
+    }
+
+    .neo-link-list {
+      display: block;
+      padding-top: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &.isContentFirst {
+    .text-media {
+      flex-direction: column-reverse;
+
+      @include fromBreakpointM() {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &.mediaTop {
+    .text-media {
+      gap: 0;
+
+      @include fromBreakpointM() {
+        flex-direction: column;
+
+        .media {
+          max-width: 46rem;
+        }
+      }
+
+      @include fromBreakpointL() {
+        flex-direction: column;
+        max-width: 62rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        .media {
+          max-width: 46rem;
+        }
+      }
+
+      @include fromBreakpointMax {
+        max-width: 80rem;
+
+        .media {
+          max-width: 60rem;
+        }
+      }
+    }
+  }
+
+  &.mediaBottom {
+    .text-media {
+      flex-direction: column-reverse;
+
+      .media {
+        margin-top: 2.5rem;
+      }
+
+      @include fromBreakpointM() {
+        .media {
+          max-width: 46rem;
+          margin-top: 0;
+        }
+      }
+
+      @include fromBreakpointL() {
+        max-width: 62rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        .media {
+          max-width: 46rem;
+        }
+      }
+
+      @include fromBreakpointMax {
+        max-width: 80rem;
+
+        .media {
+          max-width: 60rem;
+        }
+      }
+    }
+  }
+
+  &.mediaLeft {
+    .text-media {
+    }
+  }
+
+  &.mediaRight {
+    .text-media {
+      flex-direction: column-reverse;
+
+      .media {
+        margin-top: 2.5rem;
+      }
+
+      @include fromBreakpointM() {
+        flex-direction: row-reverse;
+
+        .media {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  &.mediaTop.mediaSmall {
+    .text-media {
+      flex-direction: column;
+
+      @include fromBreakpointM() {
+        .media {
+          max-width: 27rem;
+        }
+      }
+
+      @include fromBreakpointMax() {
+        .media {
+          max-width: 38rem;
+        }
+      }
+    }
+  }
+
+  &.mediaBottom.mediaSmall {
+    .text-media {
+      @include fromBreakpointM() {
+        .media {
+          max-width: 27rem;
+        }
+      }
+
+      @include fromBreakpointMax() {
+        .media {
+          max-width: 38rem;
+        }
+      }
+    }
+  }
+
+  &.mediaLeft.mediaSmall {
+    .text-media {
+      @include fromBreakpointL() {
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: 3rem;
+
+        .media {
+          max-width: 30rem;
+        }
+      }
+
+      @include fromBreakpointMax() {
+        max-width: 100rem;
+        margin-right: 7.8rem;
+
+        .media {
+          max-width: 38rem;
+        }
+      }
+    }
+  }
+
+  &.mediaRight.mediaSmall {
+    .text-media {
+      @include fromBreakpointL() {
+        max-width: 80rem;
+        margin-left: auto;
+        margin-right: 3rem;
+
+        .media {
+          max-width: 30rem;
+        }
+      }
+
+      @include fromBreakpointMax() {
+        max-width: 100rem;
+        margin-right: 7.8rem;
+
+        .media {
+          max-width: 38rem;
+        }
+      }
+    }
+  }
+
+  &.noMedia {
+    .text-media {
+      margin-top: $cms-component-margin-top-max;
+
+      .neo-headline {
+        margin-top: 0;
+      }
+
+      .neo-headline.level-2 {
+        @include fromBreakpointM() {
+          margin-top: 0;
+        }
+      }
+
+      .neo-headline.level-3 {
+        @include fromBreakpointM() {
+          margin-top: 0;
+        }
+      }
+
+      .neo-headline.level-4 {
+        @include fromBreakpointM() {
+          margin-top: 0;
+        }
+      }
+
+      @include fromBreakpointL() {
+        max-width: 62rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      @include fromBreakpointMax() {
+        max-width: 80rem;
+      }
+    }
+  }
+
+  &.background {
+    background-color: $grey-10;
+
+    .text-media {
+      padding: 4rem 0;
+    }
+  }
+}
