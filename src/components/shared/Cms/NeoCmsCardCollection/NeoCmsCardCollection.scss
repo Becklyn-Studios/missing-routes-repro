@@ -1,0 +1,141 @@
+@import "@css/scss/utilities";
+
+.neo-cms-card-collection {
+    display: block;
+    margin-bottom: -4rem;
+
+    &.background {
+        background-color: $grey-10;
+
+        .card-collection {
+            padding-top: 4rem;
+        }
+    }
+
+    .card-collection {
+        @include cmsComponent();
+
+        &.count-2 {
+            .neo-card {
+                @include span(12);
+                @include fromBreakpointM {
+                    @include span(6);
+                }
+                @include fromBreakpointMax {
+                    @include span(4);
+                }
+            }
+
+            .neo-card:first-of-type {
+                @include fromBreakpointMax {
+                    @include startSpanOffset(4, 2);
+                }
+            }
+
+            @include ieonly {
+                display: flex;
+                flex-wrap: wrap;
+
+                .neo-card:nth-of-type(odd) {
+                    @include fromBreakpointM {
+                        margin-right: 0;
+                    }
+                }
+
+                .neo-card:nth-of-type(even) {
+                    @include fromBreakpointMax {
+                        @include startSpanOffset(4, 2);
+                    }
+                }
+            }
+
+            > .neo-headline {
+                @include span(12);
+                margin-bottom: 2.5rem;
+                @include fromBreakpointL() {
+                    @include startSpanOffset(8, 2);
+                }
+
+                @include fromBreakpointMax() {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+
+        &.count-3 {
+            @include ieonly {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .neo-card {
+                @include span(12);
+                @include fromBreakpointM {
+                    @include span(6);
+                    @include ieonly {
+                        &:nth-child(odd) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                @include fromBreakpointL {
+                    @include span(4);
+                    @include ieonly {
+                        &:nth-child(odd) {
+                            margin-right: 3.9rem; // -1px to avoid line breaking due to ie11 rounding errors
+                        }
+                        &:nth-child(4n) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+
+            > .neo-headline {
+                @include span(12);
+                margin-bottom: 2.5rem;
+                @include fromBreakpointL() {
+                    @include startSpanOffset(8, 2);
+                }
+                @include fromBreakpointMax() {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+
+        &.count-4 {
+            @include ieonly {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+
+            .neo-card {
+                @include span(12);
+                @include fromBreakpointM {
+                    @include span(6);
+                    @include ieonly {
+                        &:nth-child(odd) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+                @include fromBreakpointMax {
+                    @include span(3);
+                }
+            }
+
+            > .neo-headline {
+                @include span(12);
+                margin-bottom: 2.5rem;
+                @include fromBreakpointL() {
+                    @include startSpanOffset(8, 2);
+                }
+                @include fromBreakpointMax() {
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+    }
+}

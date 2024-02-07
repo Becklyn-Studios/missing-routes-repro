@@ -4,12 +4,13 @@ import { getContent } from "@lib/contentful/api/content";
 import { SearchParams } from "@type/common";
 import { getCurrentLocale } from "@lib/layers/state/server";
 import { draftMode } from "next/headers";
+import { CardCollection } from "./CardCollection";
 
 const contents = {
   newsCollection: null,
   eventCollection: null,
   blogCollection: null,
-  cardCollection: null,
+  cardCollection: CardCollection,
   contactCollection: ContactCollection,
   tileCollection: null,
   linkList: null,
