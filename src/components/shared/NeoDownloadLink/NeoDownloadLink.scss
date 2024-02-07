@@ -1,0 +1,29 @@
+@import "@css/scss/utilities";
+
+.neo-download-link {
+    @include fontCopy;
+    color: $grey-55;
+    display: flex;
+    align-items: flex-start;
+
+    .neo-icon {
+        flex-shrink: 0;
+        width: 2rem;
+        height: 2rem;
+        fill: $primary-variant;
+        color: $primary-variant;
+        margin-right: 1.5rem;
+        margin-top: 0.4rem;
+    }
+
+    .neo-link {
+        display: inline;
+        text-transform: none;
+        margin-bottom: 0;
+
+        &::before {
+            content: " ";
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@import "@css/scss/utilities";
+
+@mixin capitalize() {
+    text-transform: uppercase;
+
+    @include fromBreakpointM {
+        float: left;
+        font-size: 8rem;
+        line-height: 1;
+        padding-right: 0.4rem;
+        margin-top: -1.7rem;
+        margin-left: -0.6rem;
+
+        @-moz-document url-prefix() {
+            margin-top: 0.1rem;
+        }
+    }
+
+    @include fromBreakpointMax {
+        font-size: 9.5rem;
+        margin-top: -2.6rem;
+
+        @-moz-document url-prefix() {
+            margin-top: -0.5rem;
+        }
+    }
+}
+
+.neo-paragraph {
+    @include fontCopy();
+    margin: 0;
+    color: $grey;
+
+    + .neo-paragraph {
+        margin-top: 2rem;
+    }
+
+    &.leadtext {
+        @include fontCopyLarge();
+    }
+
+    &.capitalizeFirstLetter::first-letter {
+        @include capitalize();
+    }
+
+    &.white {
+        color: $white;
+    }
+
+    &.mobile-hidden {
+        display: none;
+    }
+
+    b {
+        font-weight: $font-weight-bold;
+    }
+
+    @include fromBreakpointM {
+        &.mobile-hidden {
+            display: block;
+        }
+    }
+}

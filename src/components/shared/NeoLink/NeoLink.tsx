@@ -1,56 +1,57 @@
 "use client";
 
 import React, { MouseEventHandler, PropsWithChildren } from "react";
+import "./NeoLink.scss";
 import { cn } from "@lib/util";
 import Link from "next/link";
+import { tracking } from "@lib/tracking/tracking";
 
 export interface NeoLinkProps {
-  href?: string;
-  target?: string;
-  noUppercase?: boolean;
-  hideMarker?: boolean;
-  variant?: NeoLinkVariant;
-  onClick?: MouseEventHandler;
+    href?: string;
+    target?: string;
+    noUppercase?: boolean;
+    hideMarker?: boolean;
+    variant?: NeoLinkVariant;
+    onClick?: MouseEventHandler;
 }
 
 export type NeoLinkVariant = "light" | "light-small" | "dark";
 
 export const NeoLink: React.FC<PropsWithChildren<NeoLinkProps>> = ({
-  href,
-  target,
-  noUppercase,
-  hideMarker,
-  variant = "dark",
-  onClick,
-  children,
+    href,
+    target,
+    noUppercase,
+    hideMarker,
+    variant = "dark",
+    onClick,
+    children,
 }) => {
-  if (!href && !onClick) {
-    return;
-  }
+    if (!href && !onClick) {
+        return;
+    }
 
-  if (href) {
+    if (href) {
+        return (
+            <Link
+                className={cn("neo-link", variant)}
+                href={href}
+                onClick={event => tracking(event.currentTarget.innerText, href)}
+                target={href?.includes("#") ? "_self" : target}
+                style={noUppercase ? { textTransform: "none" } : {}}>
+                {hideMarker ? null : "›\xa0"}
+                {children}
+            </Link>
+        );
+    }
+
     return (
-      <Link
-        className={cn("neo-link", variant)}
-        href={href}
-        target={href?.includes("#") ? "_self" : target}
-        style={noUppercase ? { textTransform: "none" } : {}}
-      >
-        {hideMarker ? null : "›\xa0"}
-        {children}
-      </Link>
+        <a
+            className={cn("neo-link", variant)}
+            onClick={onClick}
+            target={href?.includes("#") ? "_self" : target}
+            style={noUppercase ? { textTransform: "none" } : {}}>
+            {hideMarker ? null : "›\xa0"}
+            {children}
+        </a>
     );
-  }
-
-  return (
-    <a
-      className={cn("neo-link", variant)}
-      onClick={onClick}
-      target={href?.includes("#") ? "_self" : target}
-      style={noUppercase ? { textTransform: "none" } : {}}
-    >
-      {hideMarker ? null : "›\xa0"}
-      {children}
-    </a>
-  );
 };

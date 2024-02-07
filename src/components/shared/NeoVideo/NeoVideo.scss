@@ -1,0 +1,42 @@
+@import "@css/scss/utilities";
+
+.neo-video {
+    $neoperl-video-aspect: 100% / 17 * 9;
+    display: block;
+
+    figure {
+        margin: 0;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: $neoperl-video-aspect;
+        padding-top: 2.5rem;
+        height: 0;
+        background: lightgrey;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+
+    figcaption {
+        @include fontCopyS();
+        margin-top: .7rem;
+        color: $grey-55;
+    }
+
+    footer {
+        margin: .3rem 0 0;
+    }
+
+    small {
+        @include fontCopyXs();
+        margin-top: .5rem;
+        color: $grey-55;
+    }
+}

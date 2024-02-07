@@ -1,0 +1,41 @@
+@import "@css/scss/utilities";
+
+.neo-list {
+    @include fontCopy();
+    list-style: none;
+    display: block;
+    padding-left: 3rem;
+    counter-reset: item;
+    color: $grey;
+
+    &.neo-list-ordered {
+        .neo-list-item {
+            &::before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                color: inherit;
+                font-size: inherit;
+                line-height: inherit;
+            }
+        }
+    }
+
+    .neo-list-item {
+        display: block;
+        margin-top: 15px;
+
+        &::before {
+            content: "\2022";
+            color: $grey-25;
+            display: inline-block;
+            width: 3rem;
+            margin-left: -3rem;
+            line-height: 0;
+            font-size: 2.5rem;
+        }
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
+}

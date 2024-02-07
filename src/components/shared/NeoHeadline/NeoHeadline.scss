@@ -1,0 +1,107 @@
+@import "@css/scss/utilities";
+
+.neo-headline {
+    color: $grey;
+    text-decoration: inherit;
+
+    &.level-1 {
+        @include fontHeadlineL;
+
+        sub,
+        sup {
+            line-height: 1.2rem;
+            font-size: 40%;
+
+            @media screen and (min-width: 768px) {
+                line-height: 1.5rem;
+            }
+
+            @media screen and (min-width: 1280px) {
+                line-height: 1.7rem;
+            }
+        }
+
+        sup {
+            position: relative;
+            top: -0.9rem;
+
+            @media screen and (min-width: 768px) {
+                top: -1.7rem;
+            }
+
+            @media screen and (min-width: 1280px) {
+                top: -2.4rem;
+            }
+        }
+    }
+
+    &.level-2 {
+        @include fontHeadlineM;
+
+        sub,
+        sup {
+            line-height: 1.1rem;
+            font-size: 50%;
+
+            @media screen and (min-width: 768px) {
+                line-height: 1.3rem;
+            }
+
+            @media screen and (min-width: 1280px) {
+                line-height: 1.7rem;
+            }
+        }
+
+        sup {
+            position: relative;
+            top: -0.7rem;
+
+            @media screen and (min-width: 768px) {
+                top: -1.1rem;
+            }
+        }
+    }
+
+    &.level-3 {
+        @include fontHeadlineS;
+
+        sub,
+        sup {
+            line-height: 1.5rem;
+            font-size: 60%;
+
+            @media screen and (min-width: 1280px) {
+                line-height: 1.7rem;
+            }
+        }
+
+        sup {
+            position: relative;
+            top: -0.5rem;
+        }
+    }
+
+    &.level-4 {
+        @include fontHeadlineXs;
+        display: inline-block;
+
+        sub,
+        sup {
+            line-height: 1.4rem;
+            font-size: 60%;
+
+            @media screen and (min-width: 768px) {
+                line-height: 1.5rem;
+            }
+
+            @media screen and (min-width: 1280px) {
+                line-height: 2.4rem;
+            }
+        }
+
+        sup {
+            position: relative;
+            top: -0.5rem;
+        }
+    }
+}

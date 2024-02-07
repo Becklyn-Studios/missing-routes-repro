@@ -1,0 +1,34 @@
+@import "@css/scss/utilities";
+
+.neo-link {
+    @include fontLink();
+    text-decoration: none;
+    color: $primary-variant;
+    text-transform: uppercase;
+    width: fit-content;
+    cursor: pointer;
+
+    &:hover {
+        @include underline($primary, $primary);
+        color: $primary;
+    }
+
+    &.light {
+        color: $white;
+        &:hover {
+            background: none;
+            color: $grey-55;
+        }
+    }
+
+    &.light-small {
+        @include fontCopyS;
+        color: $white;
+        text-transform: none;
+        font-weight: lighter;
+        &:hover {
+            background: none;
+            color: $grey-55;
+        }
+    }
+}

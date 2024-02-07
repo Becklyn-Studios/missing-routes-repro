@@ -1,0 +1,21 @@
+@import "@css/scss/utilities";
+
+.neo-link-list {
+    .neo-link {
+        display: inline;
+        margin-bottom: 1rem;
+
+        &::before {
+            content: " ";
+            display: block;
+        }
+    }
+
+    .neo-download-link {
+        margin-bottom: 1.5rem;
+    }
+
+    .neo-link:last-of-type:not(:last-child) {
+        margin-bottom: 2.5rem;
+    }
+}

@@ -1,0 +1,94 @@
+@import "@css/scss/utilities";
+
+.contact {
+    @include fromBreakpointM() {
+        flex-direction: row;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .neo-headline {
+        display: block;
+        margin-top: -0.9rem;
+        margin-left: 0;
+    }
+
+    &__image {
+        @include fromBreakpointM() {
+            margin-right: 4rem;
+        }
+
+        width: 17rem;
+        height: 17rem;
+        object-fit: cover;
+        font-family: "object-fit: cover;";
+        border-radius: 50%;
+
+        + .contact__details {
+            @include fromBreakpointM() {
+                margin-top: 0;
+            }
+
+            margin-top: 0.33rem;
+            margin-left: 0;
+        }
+    }
+
+    &__details {
+        @include fromBreakpointM() {
+            flex: 1;
+        }
+
+        @supports (overflow-wrap: break-word) {
+            overflow-wrap: break-word;
+        }
+
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    &__jobtitle {
+        @include fontCopyMedium();
+        margin: 1.5rem 0 0;
+        color: $grey;
+    }
+
+    &__list {
+        margin: 1.5rem 0 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+            @include fontCopy();
+            color: $grey;
+
+            span {
+                margin-right: 0.5rem;
+            }
+        }
+
+        .neo-link {
+            span {
+                margin-right: 0.5rem;
+            }
+        }
+    }
+
+    .neo-socialmedia-list {
+        display: block;
+        margin-top: 0;
+    }
+
+    &:not(.single) {
+        @include fromBreakpointL() {
+            .contact__details {
+                margin-left: 2.1rem;
+            }
+
+            .contact__image + .contact__details {
+                margin-left: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import "@css/scss/utilities";
+
+.neo-image {
+    display: block;
+    position: relative;
+
+    figure {
+        margin: 0;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    figcaption {
+        @include fontCopyS();
+        margin-top: 0.7rem;
+        color: $grey-55;
+    }
+
+    footer {
+        margin: 0.3rem 0 0;
+    }
+
+    small {
+        @include fontCopyXs();
+        margin-top: 0.5rem;
+        color: $grey-55;
+    }
+}

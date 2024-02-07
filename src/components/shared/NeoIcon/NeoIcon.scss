@@ -1,0 +1,19 @@
+@import "@css/scss/utilities";
+
+.neo-icon {
+    display: inline-block;
+    line-height: 0;
+
+    svg {
+        height: 100%;
+        width: 100%;
+    }
+
+    .icon__wrapper {
+        span {
+            display: inline-block;
+            margin-top: 10px;
+            line-height: 22px;
+        }
+    }
+}
