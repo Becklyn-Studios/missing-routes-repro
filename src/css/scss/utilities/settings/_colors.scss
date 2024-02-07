@@ -1,0 +1,19 @@
+// colors from https://collaboration.virtual-identity.com/display/NEOWEB/Colours
+$red: #f00f17;
+$red-dark: #c51a1b;
+$gold: #ceb992;
+
+
+$primary: $red;
+$primary-variant: $red-dark;
+$accent: $gold;
+
+$black: #1d1d1d;
+$white: #ffffff;
+
+$grey: #4a4a49;
+$grey-70: mix($grey, $white, 70);
+$grey-55: mix($grey, $white, 55);
+$grey-35: mix($grey, $white, 35);
+$grey-25: mix($grey, $white, 25);
+$grey-10: mix($grey, $white, 10);

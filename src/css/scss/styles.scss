@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'DINW05-CondBold';
+    src: url('../fonts/DINW05-CondBold.eot');
+    src:
+      url('../fonts/DINW05-CondBold.woff2') format('woff2'),
+      url('../fonts/DINW05-CondBold.woff') format('woff'),
+      url('../fonts/DINW05-CondBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DINW05-Medium';
+    src: url('../fonts/DINW05-Medium.eot');
+    src:
+      url('../fonts/DINW05-Medium.woff2') format('woff2'),
+      url('../fonts/DINW05-Medium.woff') format('woff'),
+      url('../fonts/DINW05-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'DINW05-Regular';
+    src: url('../fonts/DINW05-Regular.eot');
+    src:
+      url('../fonts/DINW05-Regular.woff2') format('woff2'),
+      url('../fonts/DINW05-Regular.woff') format('woff'),
+      url('../fonts/DINW05-Regular.ttf') format('truetype');
+}
+
+b {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,5 @@
+@mixin addAttributeStyles($component, $attribute) {
+    #{$component}[#{$attribute}] {
+        @content
+    }
+}

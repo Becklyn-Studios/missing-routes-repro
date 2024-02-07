@@ -1,0 +1,168 @@
+$font-weight-normal:     400;
+$font-weight-bold:       600;
+$font-family-condensed:	 var(--font-dinw05-bold), sans-serif;
+$font-family-medium:	 var(--font-dinw05-medium), sans-serif;
+$font-family-regular:	 var(--font-dinw05-regular), sans-serif;
+
+@mixin fontHeadlineL() {
+	font-family: $font-family-condensed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 34px;
+	line-height: 44px;
+	
+	text-transform: uppercase;
+
+	@include fromBreakpointM {
+		font-size: 66px;
+		line-height: 76px;
+	}
+	@include fromBreakpointL {
+		font-size: 72px;
+		line-height: 82px;
+	}
+	@include fromBreakpointMax{
+		font-size: 87px;
+		line-height: 97px;
+	}
+}
+
+@mixin fontHeadlineQuote() {
+	font-family: $font-family-condensed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 22px;
+	line-height: 32px;
+
+	@include fromBreakpointM {
+		font-size: 28px;
+		line-height: 38px;
+	}
+	@include fromBreakpointMax {
+		font-size: 32px;
+		line-height: 42px;
+	}
+}
+
+@mixin fontHeadlineM() {
+	font-family: $font-family-condensed;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 28px;
+	line-height: 38px;
+
+	text-transform: uppercase;
+
+	@include fromBreakpointM {
+		font-size: 40px;
+		line-height: 50px;
+	}
+	@include fromBreakpointMax{
+		font-size: 45px;
+		line-height: 55px;
+	}
+}
+
+@mixin fontHeadlineS() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 22px;
+	line-height: 32px;
+
+	@include fromBreakpointM {
+		font-size: 28px;
+		line-height: 38px;
+	}
+	@include fromBreakpointMax {
+		font-size: 32px;
+		line-height: 42px;
+	}
+}
+
+@mixin fontHeadlineXs() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 20px;
+	line-height: 30px;
+
+	@include fromBreakpointM {
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+@mixin fontCopyXs() {
+	font-family: $font-family-regular;
+
+	font-size: 12px;
+	line-height: 19px;
+}
+
+@mixin fontCopyS() {
+	font-family: $font-family-regular;
+
+	font-size: 15px;
+	line-height: 22px;
+}
+
+@mixin fontCopy() {
+	font-family: $font-family-regular;
+
+	font-size: 18px;
+	line-height: 28px;
+}
+
+@mixin fontCopyMedium() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 18px;
+	line-height: 28px;
+}
+
+@mixin fontLink() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 18px;
+	line-height: 28px;
+}
+
+@mixin fontCopyLarge() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 18px;
+	line-height: 28px;
+
+	@include fromBreakpointM {
+		font-size: 22px;
+		line-height: 32px;
+	}
+	@include fromBreakpointMax {
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+@mixin fontLeadInitial() {
+	font-family: $font-family-medium;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	font-size: 80px;
+
+	@include fromBreakpointMax {
+		font-size: 110px;
+	}
+}

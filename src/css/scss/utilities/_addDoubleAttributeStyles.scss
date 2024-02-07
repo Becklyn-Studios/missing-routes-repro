@@ -1,0 +1,9 @@
+@mixin addDoubleAttributeStyles($component, $attribute1, $attribute2) {
+    :host([#{$attribute1}][#{$attribute2}]) {
+        @content
+    }
+
+    #{$component}[#{$attribute1}][#{$attribute2}] {
+        @content
+    }
+}

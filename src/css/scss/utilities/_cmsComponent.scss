@@ -1,0 +1,17 @@
+@import './settings/breakpoints';
+@import './grid';
+@import './settings';
+
+@mixin cmsComponent {
+	@include gridWidth;
+	@include grid(1, 0);
+	margin-top: $cms-component-margin-top;
+
+	@include fromBreakpointM() {
+		@include grid(12, 40);
+	}
+
+	@include fromBreakpointMax() {
+		margin-top: $cms-component-margin-top-max;
+	}
+}

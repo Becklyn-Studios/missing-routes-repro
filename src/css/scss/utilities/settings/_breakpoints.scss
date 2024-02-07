@@ -1,0 +1,42 @@
+// breakpoints from https://collaboration.virtual-identity.com/display/NEOWEB/Grid
+$breakpoint-max: 1280px;
+$breakpoint-l: 1024px;
+$breakpoint-m: 768px;
+$breakpoint-button: 600px;
+$breakpoint-s: 320px;
+
+@mixin fromBreakpoint($breakpoint) {
+  @media screen and (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
+
+@mixin fromBreakpointS {
+	@include fromBreakpoint($breakpoint-s) {
+    @content;
+  }
+}
+
+@mixin fromBreakpointButton {
+	@include fromBreakpoint($breakpoint-button) {
+    @content;
+  }
+}
+
+@mixin fromBreakpointM {
+	@include fromBreakpoint($breakpoint-m) {
+    @content;
+  }
+}
+
+@mixin fromBreakpointL {
+	@include fromBreakpoint($breakpoint-l) {
+    @content;
+  }
+}
+
+@mixin fromBreakpointMax {
+	@include fromBreakpoint($breakpoint-max) {
+    @content;
+  }
+}

@@ -1,3 +1,4 @@
+import "@css/globals.scss";
 import Script from "next/script";
 import React, { PropsWithChildren } from "react";
 import { fonts } from "@css/typography";

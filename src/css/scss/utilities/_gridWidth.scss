@@ -1,0 +1,26 @@
+@import "./settings/breakpoints";
+@import "./grid";
+@import "./settings";
+
+@mixin gridWidth {
+    display: block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    @include fromBreakpointM() {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+
+    @include fromBreakpointMax() {
+        margin-left: auto;
+        margin-right: auto;
+        width: 122rem;
+    }
+}

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Use layers (or "tailwindcss/plugin") to make Tailwind process your custom classes
+This will allow you to use your custom classes with Tailwind modifiers (e.g. "hover:my-custom-style")
+https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer */
+
+@layer utilities {
+    @import "helper/utilties";
+    @import "helper/reset";
+}
+
+@layer styles {
+    @import "applies/text";
+}
+
+@import "helper/neo-reset";

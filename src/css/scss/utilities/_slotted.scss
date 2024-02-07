@@ -1,0 +1,16 @@
+@mixin slotted($key, $direct-only: false) {
+	::slotted(#{$key}) {
+		@content
+	}
+
+	@if $direct-only == true {
+		> #{$key} {
+			@content
+		}
+	} @else {
+		#{$key} {
+			@content
+		}
+	}
+
+}

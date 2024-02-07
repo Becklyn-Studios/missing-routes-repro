@@ -1,0 +1,41 @@
+@mixin span($cols, $base: 12) {
+    $totalGaps: ($base - 1) * 40px;
+    width: calc((100% - #{$totalGaps}) / #{$base} * #{$cols} + (#{($cols - 1) * 40px}));
+    @supports (display: grid) {
+        grid-column: span $cols;
+        width: auto;
+    }
+}
+
+@mixin startSpanOffset($cols, $offset: 0, $base: 12) {
+    @include span($cols, $base);
+    $totalGaps: ($base - 1) * 4rem;
+    margin-left: calc((100% - #{$totalGaps}) / #{$base} * #{$offset} + (#{$offset * 40px}));
+    @supports (display: grid) {
+        margin-left: 0;
+        grid-column: #{$offset + 1} / span $cols;
+    }
+}
+
+@mixin grid($cols, $gap) {
+    $totalGaps: ($cols - 1) * $gap;
+    @supports (display: grid) {
+        display: grid;
+        grid-column-gap: #{$gap}px;
+        grid-template-columns: repeat($cols, 1fr);
+    }
+
+    > * {
+        float: left;
+        margin-right: #{$gap}px;
+        width: calc((100% - #{$totalGaps}) / #{$cols});
+        @supports (display: grid) {
+            float: none;
+            margin-right: 0;
+            width: auto;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+$z-index-header: 'z-index-header';
+$z-index-multiselect: 'z-index-multiselect';
+$z-index-form-elements: 'z-index-form-elements';
+$z-index-toolbar: 'z-index-toolbar';
+
+$z-indexes: (
+  $z-index-toolbar
+	$z-index-header
+	$z-index-multiselect
+  $z-index-form-elements
+);
+
+@function z($name) {
+	@if index($z-indexes, $name) {
+		@return (length($z-indexes) - index($z-indexes, $name)) + 1;
+	} @else {
+		@warn 'there is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+		@return null;
+	}
+}
