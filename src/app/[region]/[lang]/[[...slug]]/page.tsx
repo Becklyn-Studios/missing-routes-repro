@@ -37,7 +37,7 @@ export async function generateStaticParams({ params }: PageProps) {
   });
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function ({ params }: PageProps) {
   const { slug } = params;
 
   if (!slug) {
@@ -88,7 +88,9 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <div>
-      <LayersProviders {...props}>{contents}</LayersProviders>
+      <LayersProviders {...props}>
+        <Page {...pageProps}>{contents}</Page>
+      </LayersProviders>
     </div>
   );
 }
