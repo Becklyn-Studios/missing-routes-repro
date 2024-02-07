@@ -5,6 +5,7 @@ import { SearchParams } from "@type/common";
 import { getCurrentLocale } from "@lib/layers/state/server";
 import { draftMode } from "next/headers";
 import { CardCollection } from "./CardCollection";
+import { Teaser } from "./Teaser";
 
 const contents = {
   newsCollection: null,
@@ -16,7 +17,7 @@ const contents = {
   linkList: null,
   textImage: TextMedia,
   accordion: null,
-  teaser: null,
+  teaser: Teaser,
   quote: null,
   image: null,
   quoteSlider: null,
