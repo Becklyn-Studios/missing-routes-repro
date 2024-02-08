@@ -16,6 +16,7 @@ import { Quote } from "./Quote";
 import { Image } from "./Image";
 import { QuoteSlider } from "./QuoteSlider";
 import { Video } from "./Video";
+import { ArticleListing } from "./ArticleListing";
 
 const contents = {
   newsCollection: NewsCollection,
@@ -35,7 +36,7 @@ const contents = {
   iframe: null,
   energyCampaignForm: null,
   logoSlider: null,
-  articleListing: null,
+  articleListing: ArticleListing,
   productFinderFeedingElement: null,
 };
 
