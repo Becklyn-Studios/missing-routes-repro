@@ -16,9 +16,12 @@ import { notFound } from "next/navigation";
 
 interface PageProps {
   params: {
+    slug: string[];
     region: RegionKey;
     lang: LangKey;
-    slug: string[];
+  };
+  searchParams: {
+    [key: string]: any;
   };
 }
 
@@ -37,7 +40,7 @@ export async function generateStaticParams({ params }: PageProps) {
   });
 }
 
-export default async function ({ params }: PageProps) {
+export default async function ({ params, searchParams }: PageProps) {
   const { slug } = params;
 
   if (!slug) {
@@ -76,7 +79,7 @@ export default async function ({ params }: PageProps) {
   }
 
   const contents = contentIds.map(({ id, contentId }: any) =>
-    ContentCreator(id, contentId, {}),
+    ContentCreator(id, contentId, searchParams),
   );
   const Page = PageCreator(pageKey as PageId);
   const pageProps = normalizer(page.fields);
@@ -89,7 +92,9 @@ export default async function ({ params }: PageProps) {
   return (
     <div>
       <LayersProviders {...props}>
-        <Page {...pageProps}>{contents}</Page>
+        <Page {...pageProps} searchParams={searchParams}>
+          {contents}
+        </Page>
       </LayersProviders>
     </div>
   );
