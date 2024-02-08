@@ -90,12 +90,7 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
               </NeoToggle>
             </div>
           )}
-          <div className="flex flex-col gap-8">
-            <ArticleListingFacetFilters
-              defaultValues={{ sortiments_value: FALLBACK_COUNTRY }}
-              {...args}
-            />
-          </div>
+          <div className="flex flex-col gap-8"></div>
         </NeoTabs>
       </Suspense>
     </NeoCmsArticleListing>
