@@ -75,31 +75,29 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
 
   return (
     <NeoCmsArticleListing>
-      <Suspense>
-        <NeoTabs tabs={tabs} searchParam="market" resetParamsOnChange>
-          {market === "oem" && informationText && (
-            <div className="mb-7">
-              <NeoToggle label={t.contentful.text.filterHintToggle}>
-                <Rte content={informationText} />
-              </NeoToggle>
-            </div>
-          )}
-          {market === "retail" && informationTextRetail && (
-            <div className="mb-7">
-              <NeoToggle label={t.contentful.text.filterHintToggle}>
-                <Rte content={informationTextRetail} />
-              </NeoToggle>
-            </div>
-          )}
-          <div className="flex flex-col gap-8">
-            <ArticleListingFacetFilters
-              defaultValues={{ sortiments_value: FALLBACK_COUNTRY }}
-              {...args}
-            />
-            <ArticleListingResultList {...args} />
+      <NeoTabs tabs={tabs} searchParam="market" resetParamsOnChange>
+        {market === "oem" && informationText && (
+          <div className="mb-7">
+            <NeoToggle label={t.contentful.text.filterHintToggle}>
+              <Rte content={informationText} />
+            </NeoToggle>
           </div>
-        </NeoTabs>
-      </Suspense>
+        )}
+        {market === "retail" && informationTextRetail && (
+          <div className="mb-7">
+            <NeoToggle label={t.contentful.text.filterHintToggle}>
+              <Rte content={informationTextRetail} />
+            </NeoToggle>
+          </div>
+        )}
+        <div className="flex flex-col gap-8">
+          <ArticleListingFacetFilters
+            defaultValues={{ sortiments_value: FALLBACK_COUNTRY }}
+            {...args}
+          />
+          <ArticleListingResultList {...args} />
+        </div>
+      </NeoTabs>
     </NeoCmsArticleListing>
   );
 };
