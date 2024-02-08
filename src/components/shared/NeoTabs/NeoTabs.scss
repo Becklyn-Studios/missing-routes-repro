@@ -1,0 +1,119 @@
+@import "@css/scss/utilities";
+
+$tab-head-font-size: 1.4rem;
+$tab-head-line-height: 2rem;
+$tab-head-font-weight: bold;
+$tab-head-margin: 0 3rem 0 0;
+
+$tab-head-color: black;
+$tab-head-color-hover: $grey-70;
+$tab-head-color-pressed: black;
+
+.neo-tabs {
+    .tabs {
+        &__head {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        &__tab {
+            cursor: pointer;
+            padding: 1rem;
+            background-color: $grey-25;
+            border-top: 0.5rem solid $grey-55;
+            border-bottom: 0.2rem solid $grey-55;
+            width: 100%;
+
+            @include fromBreakpointM {
+                padding: 3rem;
+            }
+
+            @include fromBreakpointL {
+                padding: 4rem;
+            }
+
+            &:first-child {
+                border-right: 0.2rem solid $grey-55;
+                &.tabs__tab {
+                    &.--active {
+                        border-right: none;
+                    }
+                }
+            }
+
+            &:last-child {
+                border-left: 0.2rem solid $grey-55;
+
+                &.tabs__tab {
+                    &.--active {
+                        border-left: none;
+                    }
+                }
+            }
+
+            &:hover {
+                color: $tab-head-color-hover;
+            }
+
+            &:active {
+                color: $tab-head-color-pressed;
+            }
+
+            &.--active {
+                background-color: $grey-10;
+                border-top: 0.5rem solid $red-dark;
+                border-bottom: none;
+            }
+        }
+
+        &__content {
+            padding: 4rem 1rem;
+            background-color: $grey-10;
+
+            @include fromBreakpointM {
+                padding: 3rem;
+            }
+
+            @include fromBreakpointL {
+                padding: 4rem;
+            }
+        }
+
+        &__description {
+            font-size: 1.2rem;
+            line-height: 1.9rem;
+            display: block;
+            @include fontCopy();
+
+            @include fromBreakpointM {
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+            }
+        }
+
+        &__headline {
+            font-family: $font-family-condensed;
+            font-size: 1.8rem;
+            line-height: 22px;
+            display: block;
+
+            @include fromBreakpointButton {
+                font-size: 2.8rem;
+                line-height: 3.8rem;
+                text-transform: uppercase;
+            }
+
+            @include fromBreakpointM {
+                font-size: 4rem;
+                line-height: 5.5rem;
+                text-transform: uppercase;
+            }
+
+            @include fromBreakpointL {
+                font-size: 4.5rem;
+                line-height: 5.5rem;
+            }
+        }
+    }
+}
