@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
 import { ArticleListingFacetFilters } from "@components/articlelisting/ArticleListingFacetFilters/ArticleListingFacetFilters";
-import { ArticleListingResultList } from "@components/articlelisting/ArticleListingResultList/ArticleListingResultList";
 import { NeoCmsArticleListing } from "@components/shared/Cms/NeoCmsArticleListing/NeoCmsArticleListing";
 import { NeoTabs } from "@components/shared/NeoTabs/NeoTabs";
 import {
@@ -96,7 +95,6 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
               defaultValues={{ sortiments_value: FALLBACK_COUNTRY }}
               {...args}
             />
-            <ArticleListingResultList {...args} />
           </div>
         </NeoTabs>
       </Suspense>
