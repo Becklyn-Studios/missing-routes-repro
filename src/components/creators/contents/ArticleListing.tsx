@@ -1,5 +1,4 @@
 import React, { Suspense } from "react";
-import { ArticleListingFacetFilters } from "@components/articlelisting/ArticleListingFacetFilters/ArticleListingFacetFilters";
 import { NeoCmsArticleListing } from "@components/shared/Cms/NeoCmsArticleListing/NeoCmsArticleListing";
 import { NeoTabs } from "@components/shared/NeoTabs/NeoTabs";
 import {
