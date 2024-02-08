@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { NeoCmsArticleListing } from "@components/shared/Cms/NeoCmsArticleListing/NeoCmsArticleListing";
 import {
   FALLBACK_COUNTRY,
@@ -73,23 +73,25 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
 
   return (
     <NeoCmsArticleListing>
-      <NeoTabs tabs={tabs} searchParam="market" resetParamsOnChange>
-        {market === "oem" && informationText && (
-          <div className="mb-7">
-            <NeoToggle label={t.contentful.text.filterHintToggle}>
-              <Rte content={informationText} />
-            </NeoToggle>
-          </div>
-        )}
-        {market === "retail" && informationTextRetail && (
-          <div className="mb-7">
-            <NeoToggle label={t.contentful.text.filterHintToggle}>
-              <Rte content={informationTextRetail} />
-            </NeoToggle>
-          </div>
-        )}
-        <div className="flex flex-col gap-8">{JSON.stringify(args)}</div>
-      </NeoTabs>
+      <Suspense>
+        <NeoTabs tabs={tabs} searchParam="market" resetParamsOnChange>
+          {market === "oem" && informationText && (
+            <div className="mb-7">
+              <NeoToggle label={t.contentful.text.filterHintToggle}>
+                <Rte content={informationText} />
+              </NeoToggle>
+            </div>
+          )}
+          {market === "retail" && informationTextRetail && (
+            <div className="mb-7">
+              <NeoToggle label={t.contentful.text.filterHintToggle}>
+                <Rte content={informationTextRetail} />
+              </NeoToggle>
+            </div>
+          )}
+          <div className="flex flex-col gap-8">{JSON.stringify(args)}</div>
+        </NeoTabs>
+      </Suspense>
     </NeoCmsArticleListing>
   );
 };
