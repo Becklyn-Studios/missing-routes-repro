@@ -1,5 +1,8 @@
 import React, { Suspense } from "react";
+import { ArticleListingFacetFilters } from "@components/articlelisting/ArticleListingFacetFilters/ArticleListingFacetFilters";
+import { ArticleListingResultList } from "@components/articlelisting/ArticleListingResultList/ArticleListingResultList";
 import { NeoCmsArticleListing } from "@components/shared/Cms/NeoCmsArticleListing/NeoCmsArticleListing";
+import { NeoTabs } from "@components/shared/NeoTabs/NeoTabs";
 import {
   FALLBACK_COUNTRY,
   FALLBACK_MARKET,
@@ -16,9 +19,8 @@ import { ContentfulRichText } from "@type/contentful/ContentfulRichText";
 import { SearchParams } from "@type/common";
 import { Rte } from "@lib/rte";
 import { NeoToggle } from "@components/shared/NeoToggle/NeoToggle";
-import { getTranslation } from "@lib/layers/translate/server";
 import { getCurrentLang } from "@lib/layers/state/server";
-import { NeoTabs } from "@components/shared/NeoTabs/NeoTabs";
+import { getTranslation } from "@lib/layers/translate/server";
 
 export interface ArticleListingProps {
   mainGroupOpaccID: string;
@@ -89,7 +91,13 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
               </NeoToggle>
             </div>
           )}
-          <div className="flex flex-col gap-8">{JSON.stringify(args)}</div>
+          <div className="flex flex-col gap-8">
+            <ArticleListingFacetFilters
+              defaultValues={{ sortiments_value: FALLBACK_COUNTRY }}
+              {...args}
+            />
+            <ArticleListingResultList {...args} />
+          </div>
         </NeoTabs>
       </Suspense>
     </NeoCmsArticleListing>

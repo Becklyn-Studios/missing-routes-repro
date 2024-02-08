@@ -1,0 +1,11 @@
+@import "@css/scss/utilities";
+
+.neo-no-result-box {
+    position: relative;
+    padding: 2.5rem;
+    background: $white;
+
+    .neo-headline + .neo-paragraph {
+        margin-top: 1.5rem;
+    }
+}

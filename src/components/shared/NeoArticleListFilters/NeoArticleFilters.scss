@@ -1,0 +1,17 @@
+@import "@css/scss/utilities";
+
+$gutter: 1rem;
+
+.neo-article-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: #{$gutter * 2};
+
+    @include fromBreakpointM {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include fromBreakpointL {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

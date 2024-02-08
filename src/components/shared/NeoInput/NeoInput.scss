@@ -1,0 +1,307 @@
+@import "@css/scss/utilities";
+
+@mixin makeLabelSmall() {
+    top: -1rem;
+    font-size: 1.2rem;
+    z-index: z("z-index-form-elements");
+}
+
+.neo-input-container {
+    display: block;
+    -webkit-appearance: none !important;
+    outline: 0;
+    overflow: hidden;
+    font-family: $font-family-regular;
+    color: $black;
+    font-size: 1.6rem;
+
+    .neo-input {
+        &__errorMessage {
+            color: $red;
+            font-size: 1.2rem;
+        }
+
+        &__hint {
+            display: block;
+            line-height: 2.6rem;
+        }
+
+        &__wrap {
+            position: relative;
+            margin-top: .5rem;
+            z-index: z("z-index-form-elements");
+
+            &--error {
+                .neo-input__label {
+                    color: $red;
+                }
+
+                .neo-input__icon {
+                    fill: currentColor;
+                    color: $red;
+                    width: 2rem;
+                    height: 2rem;
+                    top: 1rem;
+                    display: none;
+                }
+
+                .neo-input__element {
+                    border-color: $red;
+                    padding-right: 6.4rem;
+
+                    &--notEmpty {
+                        + .neo-input__label {
+                            color: $red;
+                        }
+                    }
+                }
+
+                &.neo-input__wrap--headline {
+                    .neo-input__element {
+                        border-color: $red;
+                    }
+                }
+
+                input:focus.neo-input__element,
+                input:focus:hover.neo-input__element,
+                input:hover.neo-input__element {
+                    border: .2rem solid $red;
+
+                    + .neo-input__label {
+                        color: $red;
+                    }
+                }
+            }
+
+            &--dark {
+                .neo-input__label {
+                    background-color: $grey-10;
+                }
+
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus,
+                input:-webkit-autofill:active {
+                    box-shadow: 0 0 0 3rem $grey-10 inset;
+                }
+            }
+
+            &--search {
+                .neo-input__element {
+                    padding-right: 4rem;
+                }
+            }
+
+            &--file {
+                margin-top: 0;
+                display: inline-block;
+
+                .neo-input__icon {
+                    display: none;
+                }
+
+                .neo-input__element {
+                    opacity: 0;
+                    height: 4.4rem;
+                    cursor: pointer;
+                    display: inline-block;
+                    padding: 0;
+
+                    &--notEmpty {
+                        + .neo-input__label {
+                            top: 0;
+                            font-size: 1.8rem;
+                            z-index: 10;
+                            color: #c51a1b;
+                        }
+
+                        &:hover.neo-input__element {
+                            + .neo-input__label {
+                                color: #c51a1b;
+                                background-color: rgba(240, 15, 23, .1);
+                            }
+                        }
+
+                        &:hover:focus.neo-input__element {
+                            + .neo-input__label {
+                                color: #c51a1b;
+                                background-color: rgba(240, 15, 23, .1);
+                            }
+                        }
+                    }
+
+                    &:hover {
+                        border-color: $grey;
+
+                        + .neo-input__label {
+                            color: #c51a1b;
+                            background-color: rgba(240, 15, 23, .1);
+                        }
+                    }
+                }
+
+                .neo-input__label {
+                    color: #c51a1b;
+                    cursor: pointer;
+                    border: solid .2rem #c51a1b;
+                    padding: .8rem 1.5rem .9rem;
+                    top: 0;
+                    left: 0;
+                    font-size: 1.8rem;
+                    letter-spacing: -.02rem;
+                    font-weight: 500;
+                    transition: none;
+                    z-index: 10;
+                    pointer-events: none;
+                }
+
+                input.neo-input__element:focus + .neo-input__label {
+                    top: 0;
+                    font-size: 1.8rem;
+                    z-index: 10;
+                    color: #c51a1b;
+                }
+
+                &.neo-input__wrap--error .neo-input__icon {
+                    position: relative;
+                    top: .5rem;
+                    display: inline-block;
+                    margin-left: 2rem;
+                }
+            }
+        }
+
+        &__searchButton {
+            display: none;
+        }
+
+        &__label {
+            position: absolute;
+            top: .9rem;
+            left: .9rem;
+            cursor: text;
+            transition: top .2s, font-size .2s;
+            z-index: -1;
+            line-height: 2.2rem;
+            padding: 0 .2rem;
+            background-color: $white;
+            color: $grey-55;
+
+            &--required {
+                &:after {
+                    content: "*";
+                }
+            }
+        }
+
+        &__element {
+            display: block;
+            padding: .9rem 1rem;
+            width: 100%;
+            outline: 0;
+            border: .2rem solid $grey-55;
+            background-color: transparent;
+            word-break: keep-all;
+            box-sizing: border-box;
+            height: 4rem;
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            font-family: $font-family-regular;
+
+            &::-ms-clear {
+                display: none;
+            }
+
+            &:not(:placeholder-shown) {
+                @include makeLabelSmall();
+            }
+
+            &:placeholder-shown {
+                color: transparent;
+            }
+
+            &:hover {
+                border-color: $grey;
+                + .neo-input__label {
+                    color: $grey;
+                }
+            }
+        }
+
+        &__icon {
+            display: none;
+            position: absolute;
+            right: 1rem;
+            top: 1.3rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            cursor: pointer;
+            fill: currentColor;
+            color: $grey;
+
+            &--active {
+                display: block;
+            }
+        }
+    }
+
+    &[type=file] .neo-input__icon {
+        right: 0;
+    }
+
+    input:focus.neo-input__element {
+        border-color: $grey;
+
+        + .neo-input__label {
+            color: $grey;
+        }
+    }
+
+
+
+    input:disabled.neo-input__element,
+    input:disabled.neo-input__element:hover {
+        border-color: $grey-25;
+        cursor: not-allowed;
+
+        + .neo-input__label {
+            color: $grey-25;
+        }
+    }
+
+    input.neo-input__element:not(:placeholder-shown) + .neo-input__label {
+        @include makeLabelSmall();
+    }
+
+    input.neo-input__element:focus + .neo-input__label {
+        @include makeLabelSmall();
+    }
+
+    input[type="search"].neo-input__element {
+        -webkit-appearance: none;
+    }
+
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        box-shadow: 0 0 0 3rem $white inset;
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $grey;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}

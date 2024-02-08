@@ -1,0 +1,155 @@
+@import "@css/scss/utilities";
+
+@mixin dropdown-color-theme(
+    $color,
+    $color-hover,
+    $color-disabled,
+    $border-color,
+    $border-color-hover,
+    $label-color,
+    $label-bg-color
+) {
+    label {
+        color: $label-color;
+        background-color: $label-bg-color;
+
+        &.active {
+            color: $color-hover;
+        }
+    }
+
+    .neo-icon,
+    .neo-icon svg {
+        fill: $border-color;
+    }
+
+    select {
+        color: $color;
+        border-color: $border-color;
+
+        &.active {
+            color: $color-hover;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        option {
+            color: $grey;
+        }
+    }
+
+    &:hover select {
+        color: $color-hover;
+        border-color: $border-color-hover;
+    }
+
+    &:not(.disabled) {
+        &:hover label {
+            color: $color-hover;
+        }
+
+        &:hover .neo-icon svg {
+            fill: $border-color-hover;
+        }
+    }
+
+    &.disabled {
+        label {
+            cursor: not-allowed;
+            color: $color-disabled;
+        }
+
+        select:disabled {
+            cursor: not-allowed;
+            color: $color-disabled;
+            border-color: $color-disabled;
+        }
+
+        option:disabled {
+            cursor: not-allowed;
+            color: $color-disabled;
+        }
+
+        .neo-icon svg {
+            fill: $color-disabled;
+        }
+    }
+}
+
+.neo-dropdown {
+    display: inline-block;
+    position: relative;
+
+    label {
+        @include fontCopyXs();
+        line-height: 1.3;
+        padding: 0 0.2rem;
+        position: absolute;
+        top: -0.1rem;
+        left: 1rem;
+        max-width: calc(100% - 2.4rem);
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        z-index: 1;
+    }
+
+    .neo-dropdown-error {
+        color: $red;
+        font-size: 1.2rem;
+    }
+
+    .neo-icon {
+        width: 1.8rem;
+        height: 1.8rem;
+        position: absolute;
+        top: 1.8rem;
+        right: 1rem;
+        pointer-events: none;
+    }
+
+    select {
+        @include fontCopyS();
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        margin-top: 0.5rem;
+        padding: 0.6rem 3rem 0.7rem 1rem;
+        border-width: 0.2rem;
+        border-style: solid;
+        border-radius: 0;
+        font-size: 1.6rem;
+        background: transparent;
+    }
+
+    &.light {
+        @include dropdown-color-theme($grey-70, $grey, $grey-25, $grey-55, $grey, $grey-55, $white);
+    }
+
+    &.dark {
+        @include dropdown-color-theme(
+            $grey-25,
+            $white,
+            $grey-70,
+            $grey-25,
+            $white,
+            $grey-25,
+            $grey
+        );
+    }
+
+    &.grey {
+        @include dropdown-color-theme(
+            $grey-70,
+            $grey,
+            $grey-25,
+            $grey-55,
+            $grey,
+            $grey-55,
+            $grey-10
+        );
+    }
+}
