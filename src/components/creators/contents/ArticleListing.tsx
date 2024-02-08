@@ -90,7 +90,7 @@ export const ArticleListing: React.FC<ArticleListingProps> = async (props) => {
               </NeoToggle>
             </div>
           )}
-          <div className="flex flex-col gap-8"></div>
+          <div className="flex flex-col gap-8">{JSON.stringify(args)}</div>
         </NeoTabs>
       </Suspense>
     </NeoCmsArticleListing>
