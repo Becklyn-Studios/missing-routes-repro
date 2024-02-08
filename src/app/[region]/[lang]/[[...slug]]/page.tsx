@@ -25,7 +25,7 @@ interface PageProps {
   };
 }
 
-export async function generateStaticParams({ params }: PageProps) {
+export async function generateStaticParams({ params }: any) {
   const { region, lang, locale } = getI18nFromRegionAndLang(params);
 
   if (!region || !lang || !locale) {
